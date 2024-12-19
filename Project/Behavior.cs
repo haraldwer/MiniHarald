@@ -3,21 +3,28 @@ using System;
 
 public partial class Behavior : Node
 {
-	public Behavior? Update()
+	protected BehaviorManager Manager;
+
+	public void Init(BehaviorManager InManager)
+	{
+		Manager = InManager;
+	}
+	
+	public virtual Behavior? Update(double InDelta)
+	{
+		return Manager.Get<BehaviorIdle>();
+	}
+
+	public virtual Behavior? Check(double InDelta)
 	{
 		return null;
 	}
 
-	public Behavior? Check()
-	{
-		return null;
-	}
-
-	public void Exit()
+	public virtual void Exit()
 	{
 	}
 
-	public void Enter()
+	public virtual void Enter()
 	{
 	}
 }

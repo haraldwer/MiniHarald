@@ -5,6 +5,7 @@ public partial class EyeAnimator : Node
 {
 	[Export] private float EyeOffset = 50f;
 	[Export] private float LookOffset = 70f;
+	[Export] private float EyeSmoothing = 20.0f;
 	[Export] private float LookSmoothing = 7.0f;
 	[Export] private float EyeHeight = 50f;
 	[Export] private Node2D Eyes;
@@ -29,9 +30,15 @@ public partial class EyeAnimator : Node
 				diff = diff.Normalized();
 			dir = diff;
 		}
-		Eyes.Position = EyeOffset * dir;
 		
-		Vector2 target = LookOffset * dir * new Vector2(1.0f, 0.5f);;
+		
+		Vector2 eyeTarget = EyeOffset * dir;
+		Vector2 ep = Eyes.Position; 
+		ep.X = Mathf.Lerp(Eyes.Position.X, eyeTarget.X, EyeSmoothing * (float)delta);
+		ep.Y = Mathf.Lerp(Eyes.Position.Y, eyeTarget.Y, EyeSmoothing * (float)delta);
+		Eyes.Position = ep;
+		
+		Vector2 target = LookOffset * dir * new Vector2(1.0f, 0.5f);
 		Vector2 p = LookRoot.Position; 
 		p.X = Mathf.Lerp(LookRoot.Position.X, target.X, LookSmoothing * (float)delta);
 		p.Y = Mathf.Lerp(LookRoot.Position.Y, target.Y, LookSmoothing * (float)delta);

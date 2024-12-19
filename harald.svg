@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="harald.svg"
-   inkscape:export-filename="FootL.png"
+   inkscape:export-filename="HandR.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.27059659"
-     inkscape:cx="739.10761"
-     inkscape:cy="1668.5354"
+     inkscape:zoom="0.54119318"
+     inkscape:cx="905.40682"
+     inkscape:cy="913.72178"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
      inkscape:window-x="1072"
      inkscape:window-y="164"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer9" />
+     inkscape:current-layer="layer6" />
   <defs
      id="defs1">
     <inkscape:path-effect
@@ -112,14 +112,14 @@
        id="layer6"
        inkscape:label="Hands">
       <circle
-         style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         style="opacity:1;fill:#f4e3d7;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke;fill-opacity:1"
          id="path9"
          cx="179.8271"
          cy="343.04004"
          r="24.200001"
          inkscape:label="HandL" />
       <circle
-         style="fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         style="fill:#f4e3d7;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke;fill-opacity:1"
          id="path9-3"
          cx="371.25092"
          cy="343.04004"
@@ -202,15 +202,15 @@
       <circle
          style="fill:#000000;stroke:#5f8dd3;stroke-width:9.31617;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
          id="path4"
-         cx="324.36963"
-         cy="167.52127"
+         cx="337.08075"
+         cy="163.36571"
          r="27.486361"
          inkscape:label="PupilR" />
       <circle
          style="fill:#000000;stroke:#5f8dd3;stroke-width:9.31617;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
          id="path4-1"
-         cx="205.14546"
-         cy="167.32025"
+         cx="218.34546"
+         cy="163.40913"
          r="27.486361"
          inkscape:label="PupilL" />
       <g

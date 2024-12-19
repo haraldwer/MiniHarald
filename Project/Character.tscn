@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dabpfinjtkhxr"]
+[gd_scene load_steps=32 format=3 uid="uid://dabpfinjtkhxr"]
 
 [ext_resource type="Script" path="res://Character.cs" id="1_1oq6m"]
+[ext_resource type="Shader" path="res://Character.gdshader" id="2_qnnaf"]
 [ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="3_8vw3l"]
 [ext_resource type="Texture2D" uid="uid://cla0yt3mb6vdw" path="res://Harald/Body.png" id="4_s58av"]
 [ext_resource type="Texture2D" uid="uid://bp6al67anv44p" path="res://Harald/FootL.png" id="5_4ggc3"]
@@ -15,13 +16,30 @@
 [ext_resource type="Texture2D" uid="uid://blenqfjiw4ntg" path="res://Harald/Happy.png" id="13_tbbe6"]
 [ext_resource type="Texture2D" uid="uid://bpj5d6wk54nn2" path="res://Harald/Open.png" id="14_ubqnw"]
 [ext_resource type="Texture2D" uid="uid://va840lsv5133" path="res://Harald/Teeth.png" id="15_a1tqi"]
-[ext_resource type="Script" path="res://Behavior.cs" id="15_v8qpr"]
 [ext_resource type="Script" path="res://BehaviorManager.cs" id="15_vmci5"]
-[ext_resource type="Script" path="res://Animator.cs" id="17_uh6aa"]
-[ext_resource type="Script" path="res://Animation.cs" id="18_oa3ht"]
+[ext_resource type="Script" path="res://MouthAnimator.cs" id="19_5fsx7"]
 [ext_resource type="Script" path="res://Movement.cs" id="19_ju3pi"]
 [ext_resource type="Script" path="res://EyeAnimator.cs" id="20_4b2l3"]
-[ext_resource type="Script" path="res://FootAnimator.cs" id="20_5hdi6"]
+[ext_resource type="Script" path="res://WalkAnimator.cs" id="20_5hdi6"]
+[ext_resource type="Script" path="res://BehaviorWalk.cs" id="21_n7m6j"]
+[ext_resource type="Script" path="res://BehaviorIdle.cs" id="22_tp350"]
+[ext_resource type="Script" path="res://BehaviorPoint.cs" id="23_6p3h1"]
+[ext_resource type="Script" path="res://BehaviorWave.cs" id="24_v0261"]
+[ext_resource type="Script" path="res://BehaviorFly.cs" id="25_d1klc"]
+[ext_resource type="Script" path="res://BehaviorLand.cs" id="26_aueml"]
+[ext_resource type="Script" path="res://BehaviorTalking.cs" id="27_kl2ao"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8ft4"]
+shader = ExtResource("2_qnnaf")
+shader_parameter/Color = Vector3(1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvhtl"]
+shader = ExtResource("2_qnnaf")
+shader_parameter/Color = Vector3(0.295, 0.38, 0.505)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvqpy"]
+shader = ExtResource("2_qnnaf")
+shader_parameter/Color = Vector3(0.5, 0.6, 0.5)
 
 [node name="Character" type="Node2D"]
 script = ExtResource("1_1oq6m")
@@ -29,35 +47,37 @@ script = ExtResource("1_1oq6m")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("3_8vw3l")
 
 [node name="FootL" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_yvhtl")
 texture = ExtResource("5_4ggc3")
 
 [node name="FootR" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_yvhtl")
 texture = ExtResource("6_rs8w8")
 
-[node name="HandL" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("7_o14w4")
-
-[node name="HandR" type="Sprite2D" parent="Sprites"]
-texture = ExtResource("8_tevsp")
-
 [node name="Body" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_mvqpy")
 texture = ExtResource("4_s58av")
 
 [node name="Head" type="Sprite2D" parent="Sprites/Body"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("9_48rot")
 
 [node name="LookRoot" type="Node2D" parent="Sprites/Body/Head"]
 
 [node name="EyeBg" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("9_8e8y2")
 
 [node name="Eyes" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("10_oh2s8")
 
 [node name="Glasses" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("11_rjpdn")
 
 [node name="Mouth" type="Node2D" parent="Sprites/Body/Head/LookRoot"]
@@ -74,21 +94,27 @@ visible = false
 texture = ExtResource("15_a1tqi")
 
 [node name="Hair" type="Sprite2D" parent="Sprites/Body/Head"]
+material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("12_i6xa8")
+
+[node name="HandL" type="Sprite2D" parent="Sprites/Body"]
+material = SubResource("ShaderMaterial_r8ft4")
+texture = ExtResource("7_o14w4")
+
+[node name="HandR" type="Sprite2D" parent="Sprites/Body"]
+material = SubResource("ShaderMaterial_r8ft4")
+texture = ExtResource("8_tevsp")
 
 [node name="Animations" type="Node" parent="."]
 
-[node name="Animator" type="Node" parent="Animations"]
-script = ExtResource("17_uh6aa")
-
-[node name="AnimationIdle" type="Node" parent="Animations/Animator"]
-script = ExtResource("18_oa3ht")
-
-[node name="FootAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Movement", "Left", "Right")]
+[node name="WalkAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Movement", "Left", "Right", "Body", "HandLeft", "HandRight")]
 script = ExtResource("20_5hdi6")
 Movement = NodePath("../../Movement")
 Left = NodePath("../../Sprites/FootL")
 Right = NodePath("../../Sprites/FootR")
+Body = NodePath("../../Sprites/Body")
+HandLeft = NodePath("../../Sprites/Body/HandL")
+HandRight = NodePath("../../Sprites/Body/HandR")
 
 [node name="EyeAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Eyes", "LookRoot", "Movement")]
 script = ExtResource("20_4b2l3")
@@ -96,23 +122,55 @@ Eyes = NodePath("../../Sprites/Body/Head/LookRoot/Eyes")
 LookRoot = NodePath("../../Sprites/Body/Head/LookRoot")
 Movement = NodePath("../../Movement")
 
-[node name="Node" type="Node" parent="Animations"]
+[node name="MouthAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Mouths")]
+script = ExtResource("19_5fsx7")
+Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Happy"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Open"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Teeth")]
 
-[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Movement", "Walk", "Eyes", "Mouth", "Behaviors")]
 script = ExtResource("15_vmci5")
-Behaviors = [NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Wave")]
+Movement = NodePath("../Movement")
+Walk = NodePath("../Animations/WalkAnimator")
+Eyes = NodePath("../Animations/EyeAnimator")
+Mouth = NodePath("../Animations/MouthAnimator")
+Behaviors = [NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Wave"), NodePath("Fly"), NodePath("Land")]
 
 [node name="Walk" type="Node" parent="Behavior"]
-script = ExtResource("15_v8qpr")
+script = ExtResource("21_n7m6j")
 
 [node name="Idle" type="Node" parent="Behavior"]
-script = ExtResource("15_v8qpr")
+script = ExtResource("22_tp350")
 
-[node name="Point" type="Node" parent="Behavior"]
-script = ExtResource("15_v8qpr")
+[node name="Point" type="Node" parent="Behavior" node_paths=PackedStringArray("HandR")]
+script = ExtResource("23_6p3h1")
+HandR = NodePath("../../Sprites/Body/HandR")
 
-[node name="Wave" type="Node" parent="Behavior"]
-script = ExtResource("15_v8qpr")
+[node name="Wave" type="Node" parent="Behavior" node_paths=PackedStringArray("HandR")]
+script = ExtResource("24_v0261")
+HandR = NodePath("../../Sprites/Body/HandR")
+
+[node name="Fly" type="Node" parent="Behavior"]
+script = ExtResource("25_d1klc")
+
+[node name="Land" type="Node" parent="Behavior"]
+script = ExtResource("26_aueml")
+
+[node name="Talking" type="Node" parent="Behavior"]
+script = ExtResource("27_kl2ao")
 
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("19_ju3pi")
+
+[node name="UI" type="PanelContainer" parent="."]
+visible = false
+offset_left = -307.0
+offset_top = -4414.0
+offset_right = 923.0
+offset_bottom = -3623.0
+scale = Vector2(4, 4)
+size_flags_vertical = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 140
+text = "Hii Caela!
+"
