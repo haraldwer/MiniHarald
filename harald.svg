@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2048"
+   height="2048"
+   viewBox="0 0 541.86664 541.86666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="harald.svg"
+   inkscape:export-filename="FootL.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.27059659"
+     inkscape:cx="739.10761"
+     inkscape:cy="1668.5354"
+     inkscape:window-width="2560"
+     inkscape:window-height="1417"
+     inkscape:window-x="1072"
+     inkscape:window-y="164"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer9" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="powerstroke"
+       message=""
+       id="path-effect11"
+       is_visible="true"
+       lpeversion="1.3"
+       scale_width="1"
+       interpolator_type="CentripetalCatmullRom"
+       interpolator_beta="0.75"
+       start_linecap_type="round"
+       end_linecap_type="round"
+       offset_points="21.739876,5.1854495"
+       linejoin_type="spiro"
+       miter_limit="4"
+       not_jump="true"
+       sort_points="true" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect10"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="0.012"
+       steps="1"
+       smooth_angles="0"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false"
+       step="1" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer9"
+     inkscape:label="Shadow">
+    <ellipse
+       style="opacity:0.347079;fill:#000000;fill-opacity:1;stroke:none;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path13"
+       cx="276.22223"
+       cy="447.82224"
+       rx="98.26667"
+       ry="33.244442"
+       inkscape:label="Shadow" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Body">
+    <g
+       inkscape:groupmode="layer"
+       id="layer7"
+       inkscape:label="Feet">
+      <rect
+         style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="rect9"
+         width="76.266663"
+         height="44.977776"
+         x="193.60001"
+         y="399.84003"
+         rx="23.711103"
+         ry="22.488888" />
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="rect9-6"
+         width="76.266663"
+         height="44.977776"
+         x="284.86667"
+         y="399.84003"
+         rx="23.711103"
+         ry="22.488888"
+         inkscape:label="FootR" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer6"
+       inkscape:label="Hands">
+      <circle
+         style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="path9"
+         cx="179.8271"
+         cy="343.04004"
+         r="24.200001"
+         inkscape:label="HandL" />
+      <circle
+         style="fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="path9-3"
+         cx="371.25092"
+         cy="343.04004"
+         r="24.200001"
+         inkscape:label="HandR" />
+    </g>
+    <rect
+       style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect8"
+       width="113.02383"
+       height="106.8096"
+       x="219.0271"
+       y="260.43045"
+       rx="17.844433"
+       ry="17.131472"
+       inkscape:label="BodyShape" />
+  </g>
+  <g
+     inkscape:label="Head"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#f4e3d7;stroke:#000000;stroke-width:29.99999908;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill;stroke-dasharray:none"
+       id="path1"
+       cx="276.55731"
+       cy="155.56351"
+       r="119.61104"
+       inkscape:label="HeadShape" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer4"
+       inkscape:label="Mouth"
+       style="display:inline">
+      <path
+         style="display:inline;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 248.21019,241.29626 c 38.02663,15.21065 60.84261,-6.22254 60.84261,-6.22254"
+         id="path5"
+         inkscape:label="Happy" />
+      <ellipse
+         style="display:none;fill:#000000;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="path6"
+         cx="267.56918"
+         cy="238.53636"
+         rx="32.495483"
+         ry="15.210651"
+         inkscape:label="Open" />
+      <rect
+         style="display:none;opacity:1;fill:#ffffff;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="rect7"
+         width="87.101151"
+         height="34.262943"
+         x="229.4731"
+         y="222.1745"
+         ry="17.131472"
+         inkscape:label="Teeth"
+         rx="17.844433" />
+      <path
+         style="display:none;fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 229.4731,239.30597 c 87.10115,0 87.10115,0 87.10115,0"
+         id="path7" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer3"
+       inkscape:label="Eyes">
+      <circle
+         style="fill:#ffffff;stroke:#000000;stroke-width:18.2909;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path2-5"
+         cx="218.68999"
+         cy="163.39291"
+         r="43.840313"
+         inkscape:label="WhiteL" />
+      <circle
+         style="fill:#ffffff;stroke:#000000;stroke-width:18.2909;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path2-8-5"
+         cx="337.24341"
+         cy="162.83995"
+         r="43.840313"
+         inkscape:label="WhiteR" />
+      <circle
+         style="fill:#000000;stroke:#5f8dd3;stroke-width:9.31617;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="path4"
+         cx="324.36963"
+         cy="167.52127"
+         r="27.486361"
+         inkscape:label="PupilR" />
+      <circle
+         style="fill:#000000;stroke:#5f8dd3;stroke-width:9.31617;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         id="path4-1"
+         cx="205.14546"
+         cy="167.32025"
+         r="27.486361"
+         inkscape:label="PupilL" />
+      <g
+         inkscape:groupmode="layer"
+         id="layer2"
+         inkscape:label="Glasses">
+        <circle
+           style="fill:none;stroke:#454545;stroke-width:18.2909;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
+           id="path2"
+           cx="218.68999"
+           cy="163.39291"
+           r="43.840313"
+           inkscape:label="FrameL" />
+        <circle
+           style="fill:none;stroke:#454545;stroke-width:18.2909;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
+           id="path2-8"
+           cx="337.24341"
+           cy="162.83995"
+           r="43.840313"
+           inkscape:label="FrameR" />
+        <path
+           style="fill:none;stroke:#454545;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke markers fill;stroke-opacity:1"
+           d="m 256.80199,141.72616 c 21.51414,-27.48181 43.51332,-2.51435 43.51332,-2.51435"
+           id="path3"
+           sodipodi:nodetypes="cc"
+           inkscape:label="Bow" />
+      </g>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer8"
+       inkscape:label="Hair">
+      <path
+         style="opacity:1;fill:#694b2f;fill-opacity:1;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         d="m 207.76368,64.990969 c -12.09938,-32.841182 12.44508,-47.36044 12.44508,-47.36044 15.55635,-5.185449 61.47329,-0.843847 91.75281,3.432399 19.95366,2.81797 56.96624,12.623014 71.13981,35.515678 15.39506,24.865582 10.64711,42.982029 5.46165,44.019114 -5.18544,1.03709 -6.22254,-17.284825 -27.31004,-30.075605 -21.08748,-12.790776 -15.1242,-2.638088 -54.62007,-1.728484 -17.89831,0.412205 -42.42241,0.244445 -66.02806,-4.494056 -14.25544,-2.861579 -32.84118,0.691394 -32.84118,0.691394 z"
+         id="path11"
+         sodipodi:nodetypes="ccssssssc" />
+      <path
+         style="opacity:1;fill:#7b593d;fill-opacity:1;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+         d="m 200.84975,51.854496 c -1.03709,24.198765 -0.69139,26.618642 -14.86495,37.680934 -14.17357,11.06229 -18.32193,20.7418 -25.58156,16.93914 -7.25963,-3.80267 -9.33381,-37.335242 3.11127,-47.706141 12.44508,-10.370899 37.33524,-6.913933 37.33524,-6.913933 z"
+         id="path12" />
+    </g>
+  </g>
+</svg>

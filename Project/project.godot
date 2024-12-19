@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MiniHarald"
+run/main_scene="res://MainScene.tscn"
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+run/max_fps=60
+run/low_processor_mode=true
+boot_splash/bg_color=Color(0, 0, 0, 0)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=150
+window/size/viewport_height=150
+window/size/initial_position_type=3
+window/size/resizable=false
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
+window/size/no_focus=true
+window/energy_saving/keep_screen_on=false
+window/per_pixel_transparency/allowed=true
+
+[dotnet]
+
+project/assembly_name="New Game Project"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.235294, 0.235294, 0.235294, 0)
+viewport/transparent_background=true

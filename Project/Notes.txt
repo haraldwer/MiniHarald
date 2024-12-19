@@ -1,0 +1,14 @@
+
+// TODO
+Make window moveable
+Create animator
+Create behaviors
+
+// Animator
+Most things are procedural. 
+Categories:
+	- Body direction
+		+ Hands / Feet z ordering
+		+ Hands / Feet directional offset
+	- Eyes direction
+	
