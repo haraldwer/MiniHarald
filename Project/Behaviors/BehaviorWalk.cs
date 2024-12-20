@@ -11,7 +11,7 @@ public partial class BehaviorWalk : Behavior
     [Export] private float CursorChance = 0.3f; 
     
     public Vector2 Target;
-    private bool FollowMouse;
+    public  bool FollowMouse;
     private RandomNumberGenerator Rnd = new();
     public Behavior? NextBehavior;
     

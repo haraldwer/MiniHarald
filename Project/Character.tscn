@@ -1,7 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://dabpfinjtkhxr"]
 
 [ext_resource type="Script" path="res://Character.cs" id="1_1oq6m"]
-[ext_resource type="Shader" path="res://Character.gdshader" id="2_qnnaf"]
 [ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="3_8vw3l"]
 [ext_resource type="Texture2D" uid="uid://cla0yt3mb6vdw" path="res://Harald/Body.png" id="4_s58av"]
 [ext_resource type="Texture2D" uid="uid://bp6al67anv44p" path="res://Harald/FootL.png" id="5_4ggc3"]
@@ -14,10 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://27xagr7t7uqt" path="res://Harald/Glasses.png" id="11_rjpdn"]
 [ext_resource type="Texture2D" uid="uid://dr5qhrv6onkxy" path="res://Harald/Hair.png" id="12_i6xa8"]
 [ext_resource type="Texture2D" uid="uid://blenqfjiw4ntg" path="res://Harald/Happy.png" id="13_tbbe6"]
+[ext_resource type="Texture2D" uid="uid://ceabdcdglmp7w" path="res://Harald/Whistle.png" id="14_pafl3"]
 [ext_resource type="Texture2D" uid="uid://bpj5d6wk54nn2" path="res://Harald/Open.png" id="14_ubqnw"]
 [ext_resource type="Texture2D" uid="uid://va840lsv5133" path="res://Harald/Teeth.png" id="15_a1tqi"]
 [ext_resource type="Script" path="res://Behaviors/BehaviorManager.cs" id="15_vmci5"]
+[ext_resource type="Texture2D" uid="uid://cmwgfuemcls4g" path="res://Harald/Note1.png" id="18_ks6pq"]
 [ext_resource type="Script" path="res://Animations/MouthAnimator.cs" id="19_5fsx7"]
+[ext_resource type="Texture2D" uid="uid://bg7ah4x533g3" path="res://Harald/Note2.png" id="19_eeovw"]
 [ext_resource type="Script" path="res://Movement.cs" id="19_ju3pi"]
 [ext_resource type="Script" path="res://Animations/EyeAnimator.cs" id="20_4b2l3"]
 [ext_resource type="Script" path="res://Animations/WalkAnimator.cs" id="20_5hdi6"]
@@ -31,20 +33,9 @@
 [ext_resource type="Script" path="res://Behaviors/BehaviorTalk.cs" id="28_r3ft8"]
 [ext_resource type="Script" path="res://Behaviors/BehaviorPushWindow.cs" id="29_bfq1l"]
 [ext_resource type="Script" path="res://Talking.cs" id="29_juq6x"]
+[ext_resource type="Script" path="res://Behaviors/BehaviorWhistle.cs" id="30_qr6pe"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8ft4"]
-shader = ExtResource("2_qnnaf")
-shader_parameter/Color = Vector3(1, 1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvhtl"]
-shader = ExtResource("2_qnnaf")
-shader_parameter/Color = Vector3(0.295, 0.38, 0.505)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvqpy"]
-shader = ExtResource("2_qnnaf")
-shader_parameter/Color = Vector3(0.5, 0.6, 0.5)
-
-[node name="Character" type="Node2D" node_paths=PackedStringArray("Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Hands")]
+[node name="Character" type="Node2D" node_paths=PackedStringArray("Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Hands", "Shirt")]
 script = ExtResource("1_1oq6m")
 Movement = NodePath("Movement")
 Talking = NodePath("Talking")
@@ -53,41 +44,37 @@ Eyes = NodePath("Animations/EyeAnimator")
 Mouth = NodePath("Animations/MouthAnimator")
 Walk = NodePath("Animations/WalkAnimator")
 Hands = NodePath("Animations/HandAnimator")
+Shirt = NodePath("Sprites/Body")
 
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("3_8vw3l")
 
 [node name="FootL" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_yvhtl")
+modulate = Color(0.258, 0.344, 0.43, 1)
 texture = ExtResource("5_4ggc3")
 
 [node name="FootR" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_yvhtl")
+modulate = Color(0.258, 0.344, 0.43, 1)
 texture = ExtResource("6_rs8w8")
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_mvqpy")
+self_modulate = Color(0.45, 0.6, 0.48, 1)
 texture = ExtResource("4_s58av")
 
 [node name="Head" type="Sprite2D" parent="Sprites/Body"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("9_48rot")
 
 [node name="LookRoot" type="Node2D" parent="Sprites/Body/Head"]
 
 [node name="EyeBg" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("9_8e8y2")
 
 [node name="Eyes" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("10_oh2s8")
 
 [node name="Glasses" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("11_rjpdn")
 
 [node name="Mouth" type="Node2D" parent="Sprites/Body/Head/LookRoot"]
@@ -103,17 +90,26 @@ texture = ExtResource("14_ubqnw")
 visible = false
 texture = ExtResource("15_a1tqi")
 
+[node name="Whistle" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
+visible = false
+texture = ExtResource("14_pafl3")
+
 [node name="Hair" type="Sprite2D" parent="Sprites/Body/Head"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("12_i6xa8")
 
 [node name="HandL" type="Sprite2D" parent="Sprites/Body"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("7_o14w4")
 
 [node name="HandR" type="Sprite2D" parent="Sprites/Body"]
-material = SubResource("ShaderMaterial_r8ft4")
 texture = ExtResource("8_tevsp")
+
+[node name="Note1" type="Sprite2D" parent="Sprites"]
+visible = false
+texture = ExtResource("18_ks6pq")
+
+[node name="Note2" type="Sprite2D" parent="Sprites"]
+visible = false
+texture = ExtResource("19_eeovw")
 
 [node name="Animations" type="Node" parent="."]
 
@@ -132,7 +128,7 @@ LookRoot = NodePath("../../Sprites/Body/Head/LookRoot")
 
 [node name="MouthAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Mouths")]
 script = ExtResource("19_5fsx7")
-Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Happy"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Open"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Teeth")]
+Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Happy"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Open"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Teeth"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Whistle")]
 
 [node name="HandAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("HandL", "HandR")]
 script = ExtResource("20_kso8b")
@@ -141,7 +137,7 @@ HandR = NodePath("../../Sprites/Body/HandR")
 
 [node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
 script = ExtResource("15_vmci5")
-Behaviors = [NodePath("Wave"), NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Fly"), NodePath("Land"), NodePath("Talk"), NodePath("Push")]
+Behaviors = [NodePath("Wave"), NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Fly"), NodePath("Land"), NodePath("Talk"), NodePath("Push"), NodePath("Whistle")]
 
 [node name="Walk" type="Node" parent="Behavior"]
 script = ExtResource("21_n7m6j")
@@ -154,7 +150,7 @@ script = ExtResource("23_6p3h1")
 
 [node name="Wave" type="Node" parent="Behavior"]
 script = ExtResource("24_v0261")
-Greetings = PackedStringArray("Hej Caela <3", "Hej!", "Heeej", "Läget?", "Vad gör duuu?")
+Greetings = PackedStringArray("Hej Caela <3", "Hej!", "Heeej", "Läget?", "Vad gör duuu?", "Jag heter Mini-Harald!")
 
 [node name="Fly" type="Node" parent="Behavior"]
 script = ExtResource("25_d1klc")
@@ -171,6 +167,12 @@ TalkDuration = 3.0
 
 [node name="Push" type="Node" parent="Behavior"]
 script = ExtResource("29_bfq1l")
+
+[node name="Whistle" type="Node" parent="Behavior" node_paths=PackedStringArray("Notes", "Mouth")]
+script = ExtResource("30_qr6pe")
+Notes = [NodePath("../../Sprites/Note1"), NodePath("../../Sprites/Note2")]
+Mouth = NodePath("../../Sprites/Body/Head/LookRoot/Mouth")
+Texts = PackedStringArray("Bra låt!", "Banger", "Ska lägga till den på Spotify", "Önskar att jag hade en dans-animation!")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
 script = ExtResource("19_ju3pi")

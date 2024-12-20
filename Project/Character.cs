@@ -12,14 +12,24 @@ public partial class Character : Node2D
     [Export] public MouthAnimator Mouth;
     [Export] public WalkAnimator Walk;
     [Export] public HandAnimator Hands;
+    [Export] public Sprite2D Shirt;
     
     private static Character? Instance;
+    private RandomNumberGenerator Rnd = new();
     
     Character()
     {
         Instance = this;
     }
-    
+
+    public override void _Ready()
+    {
+        base._Ready();
+
+        var c = Shirt.SelfModulate;
+        Shirt.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
+    }
+
     public static Character Get() => Instance;
     
     public static float ViewportScale()

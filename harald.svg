@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="harald.svg"
-   inkscape:export-filename="TextBG.png"
+   inkscape:export-filename="Note1.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.38268137"
-     inkscape:cx="1111.8911"
-     inkscape:cy="1302.6503"
+     inkscape:zoom="0.54119318"
+     inkscape:cx="1321.1549"
+     inkscape:cy="976.54593"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
-     inkscape:window-x="1072"
+     inkscape:window-x="1194"
      inkscape:window-y="164"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer10" />
+     inkscape:current-layer="layer12" />
   <defs
      id="defs1">
     <inkscape:path-effect
@@ -94,6 +94,67 @@
        d="m 31.112697,455.03263 c -3.456966,24.89018 -23.5073709,64.20374 -23.5073709,64.20374 0,0 42.2614139,-15.90207 61.8796989,-8.72885"
        id="path8"
        sodipodi:nodetypes="ccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="Note">
+    <g
+       inkscape:groupmode="layer"
+       id="layer12"
+       inkscape:label="Note1">
+      <circle
+         style="fill:#ffffff;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke:none"
+         id="path14"
+         cx="465.30768"
+         cy="248.21021"
+         r="17.976227" />
+      <circle
+         style="fill:#ffffff;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke:none"
+         id="path14-8"
+         cx="511.29712"
+         cy="267.71774"
+         r="17.976227" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 476.75936,246.02675 c 0.34929,-69.07754 0.34929,-77.09287 0.34929,-77.09287"
+         id="path15" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 522.7104,267.3964 c 0.34929,-69.07754 0.47151,-84.4262 0.47151,-84.4262"
+         id="path15-5"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 477.26026,169.02872 45.54555,13.65502 m -26.45833,-10.84792"
+         id="path17"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 477.52181,194.05981 45.54555,13.65502 m -26.45833,-10.84792"
+         id="path17-6"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer13"
+       inkscape:label="Note2">
+      <circle
+         style="fill:#ffffff;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke:none"
+         id="path14-8-1"
+         cx="432.12775"
+         cy="188.09201"
+         r="17.976227" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 443.4799,187.58733 c 0.34929,-69.07755 0.34929,-77.09288 0.34929,-77.09288"
+         id="path15-5-1" />
+      <path
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:13.2292;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+         d="m 443.85428,110.4309 c 16.97388,1.93099 9.71785,15.08303 23.96808,16.93015"
+         id="path16"
+         sodipodi:nodetypes="cc" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -208,7 +269,15 @@
       <path
          style="display:none;fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
          d="m 229.4731,239.30597 c 87.10115,0 87.10115,0 87.10115,0"
-         id="path7" />
+         id="path7"
+         inkscape:label="Teeth_Middle" />
+      <circle
+         style="display:none;fill:#000000;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="path10"
+         cx="277.94009"
+         cy="242.67905"
+         r="17.284832"
+         inkscape:label="Whistle" />
     </g>
     <g
        inkscape:groupmode="layer"

@@ -10,6 +10,7 @@ public partial class MouthAnimator : Node
 		SMILE = 0,
 		OPEN,
 		TEETH,
+		WHISTLE,
 		COUNT
 	}
 

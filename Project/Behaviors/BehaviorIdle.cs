@@ -3,7 +3,7 @@ using System;
 
 public partial class BehaviorIdle : Behavior
 {
-    [Export] private float MaxDuration = 3.0f; 
+    [Export] private float MaxDuration = 5.0f; 
     [Export] private float MinDuration = 1.0f;
 
     private RandomNumberGenerator Rnd = new();
@@ -22,7 +22,6 @@ public partial class BehaviorIdle : Behavior
         
         Countdown -= InDelta;
         if (Countdown < 0)
-            //return Get<BehaviorPushWindow>();
             return Character.Get().Behavior.GetRandom();
         return null;
     }

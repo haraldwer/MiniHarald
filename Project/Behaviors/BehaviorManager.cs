@@ -37,6 +37,7 @@ public partial class BehaviorManager : Node
 		if (Current != null)
 			Current.Exit();
 		Current = In;
+		GD.Print("Behavior: " + Current.GetType().Name);
 		Current.Enter();
 	}
 

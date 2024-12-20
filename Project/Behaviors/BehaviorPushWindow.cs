@@ -8,12 +8,13 @@ public partial class BehaviorPushWindow : Behavior
     [Export] private float PushDuration = 1.0f;
     [Export] private Vector2 Push = Vector2.Right * 50.0f;
     
-    private IntPtr? WindowHandle;
+    private IntPtr WindowHandle = IntPtr.Zero;
     private Vector2 TargetPos;
     private double Duration;
     
     public override void Enter()
     {
+        Character.Get().Walk.Correct();
         Duration = 0;
     }
 
@@ -27,17 +28,17 @@ public partial class BehaviorPushWindow : Behavior
         var c = Character.Get();
         var pos = c.Movement.GetPos();
         
-        if (WindowHandle == null)
+        if (WindowHandle == IntPtr.Zero || TargetPos == Vector2.Zero)
         {
-            WindowHandle = WindowUtility.GetRandomWindow();
+            WindowHandle = ProcessUtility.GetRandomWindow();
             if (WindowHandle == IntPtr.Zero)
                 return base.Update(InDelta);
             
             // Start by walking there
-            var p = WindowUtility.GetWindowSide((IntPtr)WindowHandle);
+            var p = ProcessUtility.GetWindowSide(WindowHandle);
             if (p == Vector2.Zero)
                 return base.Update(InDelta);
-            TargetPos = Character.WorldToChar(Character.ScreenToWorld(p));
+            TargetPos = Character.ScreenToWorld(p);
             c.Eyes.CustomDir = (TargetPos - pos).Normalized();
         }
         
@@ -47,10 +48,11 @@ public partial class BehaviorPushWindow : Behavior
             var walk = Get<BehaviorWalk>();
             walk.Target = TargetPos;
             walk.NextBehavior = this;
+            walk.FollowMouse = false;
             return walk;
         }
-
-        WindowUtility.PushWindow((IntPtr)WindowHandle, Vector2I.Right);
+        
+        ProcessUtility.PushWindow(WindowHandle, Vector2I.Right);
 
         Duration += InDelta;
         if (Duration > PushDuration)

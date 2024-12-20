@@ -7,6 +7,7 @@
     <RootNamespace>NewGameProject</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="NPSMLib" Version="0.9.14" />
     <PackageReference Include="Win32Interop.User32" Version="1.0.1" />
   </ItemGroup>
 </Project>
