@@ -3,31 +3,45 @@ using System;
 
 public partial class Movement : Node
 {
+	[Export] private Sprite2D Shadow;
+	[Export] private float Gravity = 100;
+	
 	private Vector2 Pos;
-	private float Height = 0;
+	private float VerticalVel;
 	
 	public override void _Ready()
 	{
 		base._Ready();
-		Pos = GetWindow().Position;
-		Pos /= Character.ViewportScale();
+		Pos = Character.ScreenToWorld(GetWindow().Position);
 	}
-	
-	public void SetHeight(float InHeight)
+
+	public override void _Process(double delta)
 	{
-		Height = InHeight;
-		SetPos(GetPos());
+		VerticalVel -= Gravity * (float)delta;
+		float orgH = GetHeight();
+		float newH = Math.Max(orgH + VerticalVel, 0);
+		SetHeight(newH);
+		SetPos(GetPos()); 
 	}
-	
+
 	public void SetPos(Vector2 InPos)
 	{
 		Pos = InPos;
-		Vector2 p = Pos * (float)Character.ViewportScale();
-		GetWindow().Position = new Vector2I((int)p.X, (int)(p.Y + Height));
+		Vector2 p = Character.WorldToScreen(InPos + Vector2.Up * GetHeight());
+		GetWindow().Position = new Vector2I((int)p.X, (int)(p.Y));
 	}
 
 	public Vector2 GetPos()
 	{
 		return Pos;
 	}
+
+	public void SetHeight(float InHeight)
+	{
+		if (InHeight > Shadow.Position.Y)
+			VerticalVel = 0;
+		Shadow.Position = Vector2.Down * InHeight;
+	}
+
+	public float GetHeight() => Shadow.Position.Y;
 }

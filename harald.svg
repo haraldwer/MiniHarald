@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="harald.svg"
-   inkscape:export-filename="HandR.png"
+   inkscape:export-filename="TextBG.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,15 +26,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.54119318"
-     inkscape:cx="905.40682"
-     inkscape:cy="913.72178"
+     inkscape:zoom="0.38268137"
+     inkscape:cx="1111.8911"
+     inkscape:cy="1302.6503"
      inkscape:window-width="2560"
      inkscape:window-height="1417"
      inkscape:window-x="1072"
      inkscape:window-y="164"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6" />
+     inkscape:current-layer="layer10" />
   <defs
      id="defs1">
     <inkscape:path-effect
@@ -66,6 +66,35 @@
        simplify_just_coalesce="false"
        step="1" />
   </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer10"
+     inkscape:label="UI"
+     style="display:none">
+    <rect
+       style="opacity:1;fill:#999999;stroke:#000000;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect1"
+       width="499.18594"
+       height="501.2601"
+       x="31.112698"
+       y="11.753686"
+       rx="54.488266"
+       ry="57.232285" />
+    <rect
+       style="opacity:1;fill:#999999;stroke:none;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect10"
+       width="41.742867"
+       height="50.817413"
+       x="31.371967"
+       y="455.10965"
+       rx="0"
+       ry="0" />
+    <path
+       style="opacity:1;fill:#999999;stroke:#000000;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       d="m 31.112697,455.03263 c -3.456966,24.89018 -23.5073709,64.20374 -23.5073709,64.20374 0,0 42.2614139,-15.90207 61.8796989,-8.72885"
+       id="path8"
+       sodipodi:nodetypes="ccc" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer9"

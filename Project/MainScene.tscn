@@ -1,9 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4bljerm8um4c"]
+[gd_scene load_steps=5 format=3 uid="uid://d4bljerm8um4c"]
 
 [ext_resource type="PackedScene" uid="uid://dabpfinjtkhxr" path="res://Character.tscn" id="1_xn544"]
+[ext_resource type="Script" path="res://TextWindow.cs" id="2_odrs6"]
+[ext_resource type="FontFile" uid="uid://ckp5d6kt1jnm3" path="res://GorriSans.ttf" id="3_hdqq5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xf2q"]
+line_spacing = 0.0
+font = ExtResource("3_hdqq5")
+font_size = 24
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Character" parent="." instance=ExtResource("1_xn544")]
-position = Vector2(61, 329)
+[node name="Character" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("1_xn544")]
+position = Vector2(75, 75)
 scale = Vector2(0.07, 0.07)
+Label = NodePath("../Window/GridContainer/Label")
+TextWindow = NodePath("../Window")
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+handle_input_locally = false
+position = Vector2i(130, 0)
+size = Vector2i(250, 110)
+visible = false
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+unfocusable = true
+mouse_passthrough = true
+script = ExtResource("2_odrs6")
+Offset = Vector2i(110, -30)
+
+[node name="GridContainer" type="MarginContainer" parent="Window"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_right = 220.0
+offset_bottom = -68.0
+grow_vertical = 0
+rotation = 0.0349066
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="Window/GridContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Text"
+label_settings = SubResource("LabelSettings_2xf2q")
+vertical_alignment = 3
+autowrap_mode = 3
