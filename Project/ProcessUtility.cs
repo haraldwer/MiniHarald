@@ -63,7 +63,7 @@ public class ProcessUtility
     private static extern IntPtr GetForegroundWindow();
     
     [DllImport("user32.dll")]
-    private extern static bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags);
+    public extern static bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, int uFlags);
 
     public static IntPtr GetRandomWindow()
     {
@@ -78,24 +78,34 @@ public class ProcessUtility
             if (p.MainWindowHandle == GetForegroundWindow())
                 return p.MainWindowHandle;
         }
-    } 
-    
-    public static Vector2 GetWindowSide(IntPtr InHandle)
+    }
+
+    public static Vector2 GetWindowPos(IntPtr InHandle)
     {
         Rect rect = new();
         GetWindowRect(InHandle, ref rect);
         return new (
-            Rnd.Randf() > 0.5 ? rect.Left : rect.Right,
-            Rnd.RandfRange(rect.Top, rect.Bottom)
+            rect.Left,
+            rect.Top
+        );
+    }
+    
+    public static Vector2 GetWindowSide(IntPtr InHandle, bool InLeft, float InPos)
+    {
+        Rect rect = new();
+        GetWindowRect(InHandle, ref rect);
+        return new (
+            InLeft ? rect.Left : rect.Right,
+            Mathf.Lerp(rect.Top, rect.Bottom, InPos)
         );
     } 
     
-    public static Vector2 GetWindowTop(IntPtr InHandle)
+    public static Vector2 GetWindowTop(IntPtr InHandle, float InPos)
     {
         Rect rect = new();
         GetWindowRect(InHandle, ref rect);
         return new (
-            Rnd.RandfRange(rect.Left, rect.Right),
+            Mathf.Lerp(rect.Left, rect.Right, InPos),
             rect.Top
         );
     }

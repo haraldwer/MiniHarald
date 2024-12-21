@@ -3,7 +3,7 @@ using System;
 
 public partial class Movement : Node
 {
-	[Export] private Sprite2D Shadow;
+	[Export] public Sprite2D Shadow;
 	[Export] private float Gravity = 100;
 	
 	private Vector2 Pos;

@@ -5,10 +5,10 @@ using NewGameProject;
 public partial class BehaviorWalk : Behavior
 {
     [Export] private float Speed = 800.0f; 
-    [Export] private float MinDist = 9000.0f; 
+    [Export] private float MinDist = 900.0f; 
     [Export] private float MaxDist = 1600.0f; 
     [Export] private float CursorDist = 400.0f; 
-    [Export] private float CursorChance = 0.3f; 
+    [Export] private float CursorChance = 0.5f; 
     
     public Vector2 Target;
     public  bool FollowMouse;

@@ -21,6 +21,9 @@ public partial class BehaviorFly : Behavior
 		c.Mouth.Set(MouthAnimator.MouthType.OPEN);
 		c.Eyes.CustomDir = Vector2.Down;
 		Offset = Vector2.Zero;
+		
+		if (c.Rnd.Randf() < 0.2)
+			c.Talking.Say("AHHHH");
 	}
 
 	public override void Exit()

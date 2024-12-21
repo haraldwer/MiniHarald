@@ -23,6 +23,7 @@ public partial class BehaviorIdle : Behavior
         Countdown -= InDelta;
         if (Countdown < 0)
             return Character.Get().Behavior.GetRandom();
+            //return Get<BehaviorGift>();
         return null;
     }
 }

@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 public partial class Character : Node2D
 {
     [Export] public Label Label;
     [Export] public TextWindow TextWindow;
+    [Export] public Window[] GiftWindows;
     [Export] public Movement Movement;
     [Export] public Talking Talking;
     [Export] public BehaviorManager Behavior;
@@ -13,9 +16,10 @@ public partial class Character : Node2D
     [Export] public WalkAnimator Walk;
     [Export] public HandAnimator Hands;
     [Export] public Sprite2D Shirt;
+    [Export] public Sprite2D Hat;
     
     private static Character? Instance;
-    private RandomNumberGenerator Rnd = new();
+    public RandomNumberGenerator Rnd = new();
     
     Character()
     {
@@ -25,9 +29,59 @@ public partial class Character : Node2D
     public override void _Ready()
     {
         base._Ready();
+        
+        AutoGenMips();
 
         var c = Shirt.SelfModulate;
         Shirt.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
+        
+        GetWindow().FilesDropped += OnFilesDropped;
+    }
+
+    void AutoGenMips()
+    {
+        List<Node> children = GetChildren().ToList();
+        while (children.Count > 0)
+        {
+            List<Node> nextChildren = new();
+            foreach (var c in children)
+            {
+                nextChildren.AddRange(c.GetChildren());
+                if (c is Sprite2D sprite)
+                {
+                    sprite.TextureFilter = TextureFilterEnum.LinearWithMipmapsAnisotropic;
+                    var tex = sprite.GetTexture();
+                    if (tex != null)
+                    {
+                        var img = tex.GetImage();
+                        if (GenMip(img))
+                            sprite.SetTexture(ImageTexture.CreateFromImage(img));
+                    }
+                }
+            }
+            children = nextChildren;
+        }
+    }
+
+    bool GenMip(Image InImage)
+    {
+        if (InImage.HasMipmaps()) 
+            return false;
+        var err = InImage.GenerateMipmaps();
+        GD.Print("Mips generated: " + InImage.ResourcePath);
+        return err == Error.Ok;
+    }
+
+    private void OnFilesDropped(string[] files)
+    {
+        if (files.IsEmpty())
+            return;
+        var image = Image.LoadFromFile(files.First());
+        GenMip(image);
+        var tex = ImageTexture.CreateFromImage(image);
+        Hat.Texture = tex;
+        Hat.Rotation = Mathf.DegToRad(Rnd.RandfRange(-15, 15));
+        Talking.Say("En mössa!");
     }
 
     public static Character Get() => Instance;

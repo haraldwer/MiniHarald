@@ -3,9 +3,9 @@ using Godot;
 
 public partial class WalkAnimator : Node
 {
-    [Export] private Node2D Left;
-    [Export] private Node2D Right;
-    [Export] private Node2D Body;
+    [Export] public Node2D Left;
+    [Export] public Node2D Right;
+    [Export] public Node2D Body;
     [Export] private Node2D HandLeft;
     [Export] private Node2D HandRight;
     [Export] private double StepDuration = 0.2;

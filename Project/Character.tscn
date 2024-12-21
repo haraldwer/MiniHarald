@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dabpfinjtkhxr"]
+[gd_scene load_steps=37 format=3 uid="uid://dabpfinjtkhxr"]
 
 [ext_resource type="Script" path="res://Character.cs" id="1_1oq6m"]
 [ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="3_8vw3l"]
@@ -31,12 +31,15 @@
 [ext_resource type="Script" path="res://Behaviors/BehaviorFly.cs" id="25_d1klc"]
 [ext_resource type="Script" path="res://Behaviors/BehaviorLand.cs" id="26_aueml"]
 [ext_resource type="Script" path="res://Behaviors/BehaviorTalk.cs" id="28_r3ft8"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorPushWindow.cs" id="29_bfq1l"]
 [ext_resource type="Script" path="res://Talking.cs" id="29_juq6x"]
 [ext_resource type="Script" path="res://Behaviors/BehaviorWhistle.cs" id="30_qr6pe"]
+[ext_resource type="Script" path="res://Behaviors/BehaviorPush.cs" id="31_mb8i2"]
+[ext_resource type="Script" path="res://Behaviors/BehaviorSit.cs" id="33_esite"]
+[ext_resource type="Script" path="res://Behaviors/BehaviorGift.cs" id="34_w3xn4"]
 
-[node name="Character" type="Node2D" node_paths=PackedStringArray("Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Hands", "Shirt")]
+[node name="Character" type="Node2D" node_paths=PackedStringArray("GiftWindows", "Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Hands", "Shirt", "Hat")]
 script = ExtResource("1_1oq6m")
+GiftWindows = []
 Movement = NodePath("Movement")
 Talking = NodePath("Talking")
 Behavior = NodePath("Behavior")
@@ -45,70 +48,92 @@ Mouth = NodePath("Animations/MouthAnimator")
 Walk = NodePath("Animations/WalkAnimator")
 Hands = NodePath("Animations/HandAnimator")
 Shirt = NodePath("Sprites/Body")
+Hat = NodePath("Sprites/Body/Head/Hat")
 
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Shadow" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
 texture = ExtResource("3_8vw3l")
 
 [node name="FootL" type="Sprite2D" parent="Sprites"]
 modulate = Color(0.258, 0.344, 0.43, 1)
+texture_filter = 6
 texture = ExtResource("5_4ggc3")
 
 [node name="FootR" type="Sprite2D" parent="Sprites"]
 modulate = Color(0.258, 0.344, 0.43, 1)
+texture_filter = 6
 texture = ExtResource("6_rs8w8")
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
 self_modulate = Color(0.45, 0.6, 0.48, 1)
+texture_filter = 6
 texture = ExtResource("4_s58av")
 
 [node name="Head" type="Sprite2D" parent="Sprites/Body"]
+texture_filter = 6
 texture = ExtResource("9_48rot")
+
+[node name="Hair" type="Sprite2D" parent="Sprites/Body/Head"]
+texture_filter = 6
+texture = ExtResource("12_i6xa8")
+
+[node name="Hat" type="Sprite2D" parent="Sprites/Body/Head"]
+texture_filter = 6
+position = Vector2(0, -500)
 
 [node name="LookRoot" type="Node2D" parent="Sprites/Body/Head"]
 
 [node name="EyeBg" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+texture_filter = 6
 texture = ExtResource("9_8e8y2")
 
 [node name="Eyes" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+texture_filter = 6
 texture = ExtResource("10_oh2s8")
 
 [node name="Glasses" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+texture_filter = 6
 texture = ExtResource("11_rjpdn")
 
 [node name="Mouth" type="Node2D" parent="Sprites/Body/Head/LookRoot"]
 
 [node name="Happy" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
+texture_filter = 6
 texture = ExtResource("13_tbbe6")
 
 [node name="Open" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
+texture_filter = 6
 texture = ExtResource("14_ubqnw")
 
 [node name="Teeth" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
+texture_filter = 6
 texture = ExtResource("15_a1tqi")
 
 [node name="Whistle" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
+texture_filter = 6
 texture = ExtResource("14_pafl3")
 
-[node name="Hair" type="Sprite2D" parent="Sprites/Body/Head"]
-texture = ExtResource("12_i6xa8")
-
 [node name="HandL" type="Sprite2D" parent="Sprites/Body"]
+texture_filter = 6
 texture = ExtResource("7_o14w4")
 
 [node name="HandR" type="Sprite2D" parent="Sprites/Body"]
+texture_filter = 6
 texture = ExtResource("8_tevsp")
 
 [node name="Note1" type="Sprite2D" parent="Sprites"]
 visible = false
+texture_filter = 6
 texture = ExtResource("18_ks6pq")
 
 [node name="Note2" type="Sprite2D" parent="Sprites"]
 visible = false
+texture_filter = 6
 texture = ExtResource("19_eeovw")
 
 [node name="Animations" type="Node" parent="."]
@@ -137,7 +162,7 @@ HandR = NodePath("../../Sprites/Body/HandR")
 
 [node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
 script = ExtResource("15_vmci5")
-Behaviors = [NodePath("Wave"), NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Fly"), NodePath("Land"), NodePath("Talk"), NodePath("Push"), NodePath("Whistle")]
+Behaviors = [NodePath("Wave"), NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Fly"), NodePath("Land"), NodePath("Talk"), NodePath("Push"), NodePath("Whistle"), NodePath("Sit"), NodePath("Gift")]
 
 [node name="Walk" type="Node" parent="Behavior"]
 script = ExtResource("21_n7m6j")
@@ -162,17 +187,24 @@ IsNormal = false
 
 [node name="Talk" type="Node" parent="Behavior"]
 script = ExtResource("28_r3ft8")
-Talks = PackedStringArray("Jag nog har en låt du skulle gilla!", "Åh jag ser fram emot bågskyttet", "Det fanns dinosaurier som vägde 80 ton!", "Mmm... En monster...", "Vilken är din favorithaj?", "Vänta bara tills du kommer till Bombadill :)", "Är det där skola??", "Din dator är mitt privata jetplan", "Vill du spela guitar hero med mig?", "Kanske dags för en löprunda...", "Är det okej att jag står här?", "Det är lite kul att titta på!", "Harald saknar dig <3", "Tror att Harald tänker på dig just nu...", "Hehe", "Dags att ställa till trubbel...")
+Talks = PackedStringArray("Jag nog har en låt du skulle gilla!", "Åh jag ser fram emot bågskyttet", "Det fanns dinosaurier som vägde 80 ton!", "Mmm... En monster...", "Vilken är din favorithaj?", "Vänta bara tills du kommer till Bombadill :)", "Är det där skola??", "Din dator är mitt privata jetplan", "Vill du spela guitar hero med mig?", "Kanske dags för en löprunda...", "Är det okej att jag står här?", "Det är lite kul att titta på!", "Harald saknar dig <3", "Tror att Harald tänker på dig just nu...", "Tihi", "Dags att ställa till trubbel...", "Hmm...", "Ra Ra Rasputin!")
 TalkDuration = 3.0
 
 [node name="Push" type="Node" parent="Behavior"]
-script = ExtResource("29_bfq1l")
+script = ExtResource("31_mb8i2")
 
 [node name="Whistle" type="Node" parent="Behavior" node_paths=PackedStringArray("Notes", "Mouth")]
 script = ExtResource("30_qr6pe")
 Notes = [NodePath("../../Sprites/Note1"), NodePath("../../Sprites/Note2")]
 Mouth = NodePath("../../Sprites/Body/Head/LookRoot/Mouth")
 Texts = PackedStringArray("Bra låt!", "Banger", "Ska lägga till den på Spotify", "Önskar att jag hade en dans-animation!")
+
+[node name="Sit" type="Node" parent="Behavior"]
+script = ExtResource("33_esite")
+
+[node name="Gift" type="Node" parent="Behavior"]
+script = ExtResource("34_w3xn4")
+Texts = PackedStringArray("Varsågod!", "En julklapp!", "Tadaa!", "Till dig!")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
 script = ExtResource("19_ju3pi")
