@@ -30,7 +30,7 @@ public partial class Character : Node2D
     {
         base._Ready();
         
-        AutoGenMips();
+        //AutoGenMips();
 
         var c = Shirt.SelfModulate;
         Shirt.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
@@ -65,8 +65,10 @@ public partial class Character : Node2D
 
     bool GenMip(Image InImage)
     {
+        InImage.PremultiplyAlpha();
+        InImage.FixAlphaEdges();
         if (InImage.HasMipmaps()) 
-            return false;
+            return true;
         var err = InImage.GenerateMipmaps();
         GD.Print("Mips generated: " + InImage.ResourcePath);
         return err == Error.Ok;

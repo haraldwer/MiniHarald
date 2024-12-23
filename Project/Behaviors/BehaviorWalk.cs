@@ -12,7 +12,6 @@ public partial class BehaviorWalk : Behavior
     
     public Vector2 Target;
     public  bool FollowMouse;
-    private RandomNumberGenerator Rnd = new();
     public Behavior? NextBehavior;
     
     public override void Enter()
@@ -20,19 +19,21 @@ public partial class BehaviorWalk : Behavior
         FollowMouse = false;
         if (Target != Vector2.Zero) 
             return;
+
+        var c = Character.Get();
         
-        FollowMouse = Rnd.Randf() < CursorChance;
+        FollowMouse = c.Rnd.Randf() < CursorChance;
         if (FollowMouse) 
             return;
         
         // Select a random point
-        var p = Character.Get().Movement.GetPos();
+        var p = c.Movement.GetPos();
 
         Vector2 dir = new Vector2(
-            Rnd.RandfRange(-1, 1),
-            Rnd.RandfRange(-1, 1)
+            c.Rnd.RandfRange(-1, 1),
+            c.Rnd.RandfRange(-1, 1)
         ).Normalized();
-        Target = p + dir * Rnd.RandfRange(MinDist, MaxDist);
+        Target = p + dir * c.Rnd.RandfRange(MinDist, MaxDist);
     }
 
     public override void Exit()

@@ -17,7 +17,6 @@ public partial class BehaviorPush : Behavior
     private bool Left;
     private float SidePos;
     private double Countdown;
-    private RandomNumberGenerator Rnd = new();
     
     private Vector2 PushOffset;
     private Vector2I WindowOffset;
@@ -43,9 +42,9 @@ public partial class BehaviorPush : Behavior
                 return base.Update(InDelta);
             
             // Start by walking there
-            Left = Rnd.Randf() > 0.5;
-            SidePos = Rnd.RandfRange(0.2f, 0.8f);
-            Countdown = Rnd.RandfRange(MinPushDuration, MaxPushDuration);
+            Left = c.Rnd.Randf() > 0.5;
+            SidePos = c.Rnd.RandfRange(0.2f, 0.8f);
+            Countdown = c.Rnd.RandfRange(MinPushDuration, MaxPushDuration);
         }
         
         var p = ProcessUtility.GetWindowSide(WindowHandle, Left, SidePos);
@@ -90,7 +89,7 @@ public partial class BehaviorPush : Behavior
         if (Countdown < 0)
         {
             WindowHandle = IntPtr.Zero;
-            if (Rnd.Randf() < 0.2)
+            if (c.Rnd.Randf() < 0.2)
                 c.Talking.Say("Mycket bättre såhär.");
             return Get<BehaviorIdle>();
         }

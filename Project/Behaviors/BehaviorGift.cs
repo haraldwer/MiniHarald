@@ -11,6 +11,7 @@ public partial class BehaviorGift : Behavior
     
     [Export] private double MoveDuration = 2.0;
     [Export] private double WaitDuration = 0.5;
+    [Export] private double GiftChance = 0.2;
     
     private int GiftIndex = -1;
     private Vector2 GiftPos;
@@ -19,6 +20,12 @@ public partial class BehaviorGift : Behavior
     public override void Enter()
     {
         var c = Character.Get();
+        if (c.Rnd.Randf() > GiftChance)
+        {
+            GiftIndex = -1;
+            return;
+        }
+        
         GiftIndex = c.Rnd.RandiRange(0, c.GiftWindows.Length - 1);
         var gift = c.GiftWindows[GiftIndex];
         if (gift.Visible)
@@ -41,6 +48,8 @@ public partial class BehaviorGift : Behavior
         
         var c = Character.Get();
         var gift = c.GiftWindows[GiftIndex] as GiftWindow;
+        if (gift == null)
+            return Get<BehaviorIdle>();
 
         Duration += InDelta;
         double lerp = Math.Clamp((Duration - WaitDuration) / MoveDuration, 0, 1);

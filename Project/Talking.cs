@@ -12,7 +12,6 @@ public partial class Talking : Node
 	
 	private double Countdown; 
 	private double MouthCountdown;
-	private RandomNumberGenerator Rnd = new();
 	private int CurrMouth;
 	
 	public void Say(string InText)
@@ -45,10 +44,10 @@ public partial class Talking : Node
 		{
 			int mouth = CurrMouth;
 			while (mouth == CurrMouth)
-				mouth = Rnd.RandiRange(0, 1);
+				mouth = Character.Get().Rnd.RandiRange(0, 1);
 			CurrMouth = mouth;
 			Character.Mouth.Set((MouthAnimator.MouthType)mouth);
-			MouthCountdown = Rnd.RandfRange(MouthMovementMin, MouthMovementMax);
+			MouthCountdown = Character.Get().Rnd.RandfRange(MouthMovementMin, MouthMovementMax);
 		}
 		
 		// Fade text

@@ -14,8 +14,6 @@ public partial class BehaviorWhistle : Behavior
     [Export] private Sprite2D[] Notes;
     [Export] private Node2D Mouth;
     [Export] private string[] Texts;
-
-    private RandomNumberGenerator Rnd = new();
     
     public override void Enter()
     {
@@ -25,7 +23,7 @@ public partial class BehaviorWhistle : Behavior
         foreach (var n in Notes)
         {
             n.Visible = true;
-            var c = Color.FromHsv(Rnd.Randf(), 1.0f, 0.5f);
+            var c = Color.FromHsv(Character.Get().Rnd.Randf(), 1.0f, 0.5f);
             n.SetModulate(new (c.R, c.G, c.B, 0));
         }
     }
@@ -46,15 +44,17 @@ public partial class BehaviorWhistle : Behavior
         if (!ProcessUtility.IsPlayingMusic())
             return Get<BehaviorIdle>();
 
+        var c = Character.Get();
+        
         Duration += InDelta;
         if (Duration > MaxDuration)
         {
-            Character.Get().Talking.Say(Texts[Rnd.RandiRange(0, Texts.Length - 1)]);
+            c.Talking.Say(Texts[c.Rnd.RandiRange(0, Texts.Length - 1)]);
             return Get<BehaviorIdle>();
         }
         
-        Character.Get().Hands.Idle(InDelta);
-        Character.Get().Mouth.Set(MouthAnimator.MouthType.WHISTLE);
+        c.Hands.Idle(InDelta);
+        c.Mouth.Set(MouthAnimator.MouthType.WHISTLE);
 
         double fadeIn = Duration / FadeDuration;
         double fadeOut = (MaxDuration - Duration) / FadeDuration;
@@ -66,9 +66,9 @@ public partial class BehaviorWhistle : Behavior
             float x = (float)Math.Sin(t);
             float y = (float)Math.Sin(t * 2);
             Notes[i].Position = new Vector2(x, y) * NoteStrength + NoteOffset * (float)fade;
-            var c = Notes[i].Modulate;
-            c.A = (float) fade;
-            Notes[i].SetModulate(c);
+            var color = Notes[i].Modulate;
+            color.A = (float) fade;
+            Notes[i].SetModulate(color);
         }
         
         double mt = Duration * MouthSpeed;

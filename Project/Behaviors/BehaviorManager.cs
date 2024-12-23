@@ -7,8 +7,6 @@ public partial class BehaviorManager : Node
 	[Export] private Behavior[] Behaviors;
 	private Behavior? Current;
 	public Behavior? GetCurrent() => Current;
-	
-	private RandomNumberGenerator Rnd = new();
 
 	public override void _Process(double delta)
 	{	
@@ -53,7 +51,7 @@ public partial class BehaviorManager : Node
 	{
 		while (true)
 		{
-			var rand = Behaviors[Rnd.RandiRange(0, Behaviors.Length - 1)];
+			var rand = Behaviors[Character.Get().Rnd.RandiRange(0, Behaviors.Length - 1)];
 			if (rand.IsNormal)
 				return rand;
 		}

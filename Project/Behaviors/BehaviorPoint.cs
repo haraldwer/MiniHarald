@@ -8,7 +8,6 @@ public partial class BehaviorPoint : Behavior
     [Export] private float RaiseOffset = 90.0f;
     
     public Vector2 Direction;
-    private RandomNumberGenerator Rnd = new();
     private double Duration; 
     
     public override void Enter()
@@ -16,8 +15,8 @@ public partial class BehaviorPoint : Behavior
         base.Enter();
         
         Direction = new Vector2(
-            Rnd.RandfRange(-1, 1),
-            Rnd.RandfRange(-1, 1)
+            Character.Get().Rnd.RandfRange(-1, 1),
+            Character.Get().Rnd.RandfRange(-1, 1)
         ).Normalized();
         Duration = 0;
 

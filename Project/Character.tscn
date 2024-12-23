@@ -175,7 +175,7 @@ script = ExtResource("23_6p3h1")
 
 [node name="Wave" type="Node" parent="Behavior"]
 script = ExtResource("24_v0261")
-Greetings = PackedStringArray("Hej Caela <3", "Hej!", "Heeej", "Läget?", "Vad gör duuu?", "Jag heter Mini-Harald!")
+Greetings = PackedStringArray("Hej Caela <3", "Hej!", "Heeej", "Läget?", "Vad gör duuu?", "Jag heter Mini-Harald!", "God jul!")
 
 [node name="Fly" type="Node" parent="Behavior"]
 script = ExtResource("25_d1klc")
@@ -204,7 +204,7 @@ script = ExtResource("33_esite")
 
 [node name="Gift" type="Node" parent="Behavior"]
 script = ExtResource("34_w3xn4")
-Texts = PackedStringArray("Varsågod!", "En julklapp!", "Tadaa!", "Till dig!")
+Texts = PackedStringArray("Varsågod!", "En julklapp!", "Tadaa!", "Till dig!", "God jul!", "Till Caela!", "Från tomten!")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
 script = ExtResource("19_ju3pi")

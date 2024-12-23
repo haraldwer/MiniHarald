@@ -11,8 +11,6 @@ public partial class BehaviorWave : Behavior
     [Export] private string[] Greetings;
     private double Duration;
     
-    private RandomNumberGenerator Rnd = new();
-    
     public override void Enter()
     {
         base.Enter();
@@ -24,8 +22,8 @@ public partial class BehaviorWave : Behavior
         c.Eyes.CustomDir = Vector2.Up * 0.1f;
         Duration = 0;
 
-        if (Rnd.Randf() > GreetingChance)
-            c.Talking.Say(Greetings[Rnd.RandiRange(0, Greetings.Length - 1)]);
+        if (c.Rnd.Randf() > GreetingChance)
+            c.Talking.Say(Greetings[c.Rnd.RandiRange(0, Greetings.Length - 1)]);
     }
 
     public override void Exit()

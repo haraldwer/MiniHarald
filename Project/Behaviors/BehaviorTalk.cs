@@ -7,8 +7,6 @@ public partial class BehaviorTalk : Behavior
     [Export] private double TalkDuration;
     private double Duration;
     
-    private RandomNumberGenerator Rnd = new();
-    
     public override void Enter()
     {
         base.Enter();
@@ -20,7 +18,7 @@ public partial class BehaviorTalk : Behavior
         c.Eyes.CustomDir = Vector2.Up * 0.1f;
         Duration = 0;
 
-        c.Talking.Say(Talks[Rnd.RandiRange(0, Talks.Length - 1)]);
+        c.Talking.Say(Talks[c.Rnd.RandiRange(0, Talks.Length - 1)]);
     }
 
     public override void Exit()

@@ -19,7 +19,6 @@ public partial class BehaviorSit : Behavior
     private float SidePos;
     private double Countdown;
     private bool Seated;
-    private RandomNumberGenerator Rnd = new();
     
     public override void Enter()
     {
@@ -45,19 +44,27 @@ public partial class BehaviorSit : Behavior
         {
             WindowHandle = ProcessUtility.GetRandomWindow();
             if (WindowHandle == IntPtr.Zero)
-                return base.Update(InDelta);
+                return Get<BehaviorIdle>();
             
             // Start by walking there
-            SidePos = Rnd.RandfRange(0.2f, 0.8f);
-            Countdown = Rnd.RandfRange(MinSitDuration, MaxSitDuration);
+            SidePos = c.Rnd.RandfRange(0.2f, 0.8f);
+            Countdown = c.Rnd.RandfRange(MinSitDuration, MaxSitDuration);
         }
         
         var p = ProcessUtility.GetWindowTop(WindowHandle, SidePos);
         if (p == Vector2.Zero)
-            return base.Update(InDelta);
+            return Get<BehaviorIdle>();
             
         var targetPos = Character.WorldToChar(Character.ScreenToWorld(p));
         targetPos += TargetOffset;
+
+        if (targetPos.Y < -530)
+        {
+            WindowHandle = IntPtr.Zero;
+            return Get<BehaviorIdle>();
+        }
+        
+        GD.Print(targetPos);
         
         // If too far away
         // If not yet seated, walk towards
@@ -76,7 +83,7 @@ public partial class BehaviorSit : Behavior
         if (!Seated)
         {
             Seated = true;
-            if (Rnd.Randf() < 0.2)
+            if (c.Rnd.Randf() < 0.2)
                 c.Talking.Say("Fin utsikt!");
         }
         
