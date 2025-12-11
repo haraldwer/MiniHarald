@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4bljerm8um4c"]
+[gd_scene load_steps=8 format=3 uid="uid://d4bljerm8um4c"]
 
-[ext_resource type="PackedScene" uid="uid://dabpfinjtkhxr" path="res://Character.tscn" id="1_xn544"]
-[ext_resource type="Script" path="res://TextWindow.cs" id="2_odrs6"]
+[ext_resource type="PackedScene" uid="uid://dabpfinjtkhxr" path="res://Harald/Harald.tscn" id="1_xn544"]
+[ext_resource type="PackedScene" uid="uid://bn83yho4mirt8" path="res://Caela/Caela.tscn" id="2_a814b"]
+[ext_resource type="Script" uid="uid://c34p0yhmfxagq" path="res://TextWindow.cs" id="2_odrs6"]
 [ext_resource type="FontFile" uid="uid://ckp5d6kt1jnm3" path="res://GorriSans.ttf" id="3_hdqq5"]
 [ext_resource type="Texture2D" uid="uid://bi84tyh4f4n7g" path="res://Gifts/Gift1.png" id="4_a3drh"]
-[ext_resource type="Script" path="res://GiftWindow.cs" id="4_a67vf"]
+[ext_resource type="Script" uid="uid://cv62s0jq76fva" path="res://GiftWindow.cs" id="4_a67vf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xf2q"]
 line_spacing = 0.0
@@ -16,12 +17,18 @@ shadow_offset = Vector2(2, 2)
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Character" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows") instance=ExtResource("1_xn544")]
+[node name="Harald" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows") instance=ExtResource("1_xn544")]
 position = Vector2(75, 80)
 scale = Vector2(0.06, 0.06)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 GiftWindows = [NodePath("../GiftWindow")]
+
+[node name="Caela" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("2_a814b")]
+position = Vector2(75, 80)
+scale = Vector2(0.06, 0.06)
+Label = NodePath("../Window/GridContainer/Label")
+TextWindow = NodePath("../Window")
 
 [node name="Window" type="Window" parent="."]
 transparent_bg = true

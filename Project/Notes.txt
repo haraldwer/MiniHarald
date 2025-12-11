@@ -1,14 +1,11 @@
 
 // TODO
-Make window moveable
-Create animator
-Create behaviors
+Skapa caela
+	- Nya voicelines
+Välj vad som ska spawnas
+Fixa spawn-logiken för gifts med interprocedural kommunikation
+Testa ny mössa
 
-// Animator
-Most things are procedural. 
-Categories:
-	- Body direction
-		+ Hands / Feet z ordering
-		+ Hands / Feet directional offset
-	- Eyes direction
-	
+Skapa katter
+	- Nya animationer
+	- Andra behaviours

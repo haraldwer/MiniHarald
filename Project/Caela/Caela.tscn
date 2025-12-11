@@ -1,44 +1,45 @@
-[gd_scene load_steps=37 format=3 uid="uid://dabpfinjtkhxr"]
+[gd_scene load_steps=38 format=3 uid="uid://bn83yho4mirt8"]
 
-[ext_resource type="Script" path="res://Character.cs" id="1_1oq6m"]
-[ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="3_8vw3l"]
-[ext_resource type="Texture2D" uid="uid://cla0yt3mb6vdw" path="res://Harald/Body.png" id="4_s58av"]
-[ext_resource type="Texture2D" uid="uid://bp6al67anv44p" path="res://Harald/FootL.png" id="5_4ggc3"]
-[ext_resource type="Texture2D" uid="uid://cvrvahy6s62jq" path="res://Harald/FootR.png" id="6_rs8w8"]
-[ext_resource type="Texture2D" uid="uid://dfax8vf46w816" path="res://Harald/HandL.png" id="7_o14w4"]
-[ext_resource type="Texture2D" uid="uid://wy8g36yynwba" path="res://Harald/HandR.png" id="8_tevsp"]
-[ext_resource type="Texture2D" uid="uid://dewg8jw1gtx5r" path="res://Harald/EyeBG.png" id="9_8e8y2"]
-[ext_resource type="Texture2D" uid="uid://cxyklsuquipf0" path="res://Harald/Head.png" id="9_48rot"]
-[ext_resource type="Texture2D" uid="uid://cbh5o2rj5bv5w" path="res://Harald/EyeFG.png" id="10_oh2s8"]
-[ext_resource type="Texture2D" uid="uid://27xagr7t7uqt" path="res://Harald/Glasses.png" id="11_rjpdn"]
-[ext_resource type="Texture2D" uid="uid://dr5qhrv6onkxy" path="res://Harald/Hair.png" id="12_i6xa8"]
-[ext_resource type="Texture2D" uid="uid://blenqfjiw4ntg" path="res://Harald/Happy.png" id="13_tbbe6"]
-[ext_resource type="Texture2D" uid="uid://ceabdcdglmp7w" path="res://Harald/Whistle.png" id="14_pafl3"]
-[ext_resource type="Texture2D" uid="uid://bpj5d6wk54nn2" path="res://Harald/Open.png" id="14_ubqnw"]
-[ext_resource type="Texture2D" uid="uid://va840lsv5133" path="res://Harald/Teeth.png" id="15_a1tqi"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorManager.cs" id="15_vmci5"]
-[ext_resource type="Texture2D" uid="uid://cmwgfuemcls4g" path="res://Harald/Note1.png" id="18_ks6pq"]
-[ext_resource type="Script" path="res://Animations/MouthAnimator.cs" id="19_5fsx7"]
-[ext_resource type="Texture2D" uid="uid://bg7ah4x533g3" path="res://Harald/Note2.png" id="19_eeovw"]
-[ext_resource type="Script" path="res://Movement.cs" id="19_ju3pi"]
-[ext_resource type="Script" path="res://Animations/EyeAnimator.cs" id="20_4b2l3"]
-[ext_resource type="Script" path="res://Animations/WalkAnimator.cs" id="20_5hdi6"]
-[ext_resource type="Script" path="res://Animations/HandAnimator.cs" id="20_kso8b"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorWalk.cs" id="21_n7m6j"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorIdle.cs" id="22_tp350"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorPoint.cs" id="23_6p3h1"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorWave.cs" id="24_v0261"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorFly.cs" id="25_d1klc"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorLand.cs" id="26_aueml"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorTalk.cs" id="28_r3ft8"]
-[ext_resource type="Script" path="res://Talking.cs" id="29_juq6x"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorWhistle.cs" id="30_qr6pe"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorPush.cs" id="31_mb8i2"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorSit.cs" id="33_esite"]
-[ext_resource type="Script" path="res://Behaviors/BehaviorGift.cs" id="34_w3xn4"]
+[ext_resource type="Script" uid="uid://bsf5fgwcuprx3" path="res://Character.cs" id="1_f71v3"]
+[ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="2_ie7dd"]
+[ext_resource type="Texture2D" uid="uid://bp6al67anv44p" path="res://Harald/FootL.png" id="3_uta4l"]
+[ext_resource type="Texture2D" uid="uid://cvrvahy6s62jq" path="res://Harald/FootR.png" id="4_e7m45"]
+[ext_resource type="Texture2D" uid="uid://csjlwhbvwyufc" path="res://Caela/Body2.png" id="5_mxp5x"]
+[ext_resource type="Texture2D" uid="uid://cxyklsuquipf0" path="res://Harald/Head.png" id="6_i36sj"]
+[ext_resource type="Texture2D" uid="uid://lctxcgb7c81b" path="res://Caela/HairFG.png" id="7_tyaj5"]
+[ext_resource type="Texture2D" uid="uid://c1e2007hc3awi" path="res://Caela/EyeBG.png" id="8_05ret"]
+[ext_resource type="Texture2D" uid="uid://cbh5o2rj5bv5w" path="res://Harald/EyeFG.png" id="9_m5exj"]
+[ext_resource type="Texture2D" uid="uid://27xagr7t7uqt" path="res://Harald/Glasses.png" id="10_gqw7e"]
+[ext_resource type="Texture2D" uid="uid://blenqfjiw4ntg" path="res://Harald/Happy.png" id="11_cthy3"]
+[ext_resource type="Texture2D" uid="uid://bpj5d6wk54nn2" path="res://Harald/Open.png" id="12_opavj"]
+[ext_resource type="Texture2D" uid="uid://va840lsv5133" path="res://Harald/Teeth.png" id="13_6u1p8"]
+[ext_resource type="Texture2D" uid="uid://ceabdcdglmp7w" path="res://Harald/Whistle.png" id="14_iyoep"]
+[ext_resource type="Texture2D" uid="uid://dfax8vf46w816" path="res://Harald/HandL.png" id="15_2np4q"]
+[ext_resource type="Texture2D" uid="uid://mtrbnvuqdd3t" path="res://Caela/HairBG.png" id="15_e3c74"]
+[ext_resource type="Texture2D" uid="uid://wy8g36yynwba" path="res://Harald/HandR.png" id="16_t1472"]
+[ext_resource type="Texture2D" uid="uid://cmwgfuemcls4g" path="res://Harald/Note1.png" id="17_vxhef"]
+[ext_resource type="Texture2D" uid="uid://bg7ah4x533g3" path="res://Harald/Note2.png" id="18_sqyjj"]
+[ext_resource type="Script" uid="uid://b0nlo0k3tot4m" path="res://Animations/WalkAnimator.cs" id="19_ll26j"]
+[ext_resource type="Script" uid="uid://b5ta1cgi7ijvv" path="res://Animations/EyeAnimator.cs" id="20_382k3"]
+[ext_resource type="Script" uid="uid://26p62no51wr6" path="res://Animations/MouthAnimator.cs" id="21_dmcn0"]
+[ext_resource type="Script" uid="uid://cdm6il0cyus48" path="res://Animations/HandAnimator.cs" id="22_klfmo"]
+[ext_resource type="Script" uid="uid://n58albk06g7y" path="res://Behaviors/BehaviorManager.cs" id="23_gk1k0"]
+[ext_resource type="Script" uid="uid://dkbbf5exp8a56" path="res://Behaviors/BehaviorWalk.cs" id="24_5j13w"]
+[ext_resource type="Script" uid="uid://b5ftaqtwo3xab" path="res://Behaviors/BehaviorIdle.cs" id="25_75j35"]
+[ext_resource type="Script" uid="uid://bi1fbqiuyrwjy" path="res://Behaviors/BehaviorPoint.cs" id="26_i7nqt"]
+[ext_resource type="Script" uid="uid://b1tn4fx828n1f" path="res://Behaviors/BehaviorWave.cs" id="27_m2dpk"]
+[ext_resource type="Script" uid="uid://ccmqu83mxbwet" path="res://Behaviors/BehaviorFly.cs" id="28_j7rsi"]
+[ext_resource type="Script" uid="uid://dxv83qeo55guv" path="res://Behaviors/BehaviorLand.cs" id="29_atnu8"]
+[ext_resource type="Script" uid="uid://wbj7vg7rko2q" path="res://Behaviors/BehaviorTalk.cs" id="30_gi5yg"]
+[ext_resource type="Script" uid="uid://bbiy4vypi0ewl" path="res://Behaviors/BehaviorPush.cs" id="31_vesjj"]
+[ext_resource type="Script" uid="uid://cmf8f475tq5o8" path="res://Behaviors/BehaviorWhistle.cs" id="32_qm70x"]
+[ext_resource type="Script" uid="uid://c4il3mjx0uae0" path="res://Behaviors/BehaviorSit.cs" id="33_dyb0i"]
+[ext_resource type="Script" uid="uid://dvj1bqgcivcpy" path="res://Behaviors/BehaviorGift.cs" id="34_lih2y"]
+[ext_resource type="Script" uid="uid://c3tev0ve88iu8" path="res://Movement.cs" id="35_y10t7"]
+[ext_resource type="Script" uid="uid://dco824wn887gs" path="res://Talking.cs" id="36_q3ons"]
 
 [node name="Character" type="Node2D" node_paths=PackedStringArray("GiftWindows", "Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Hands", "Shirt", "Hat")]
-script = ExtResource("1_1oq6m")
+script = ExtResource("1_f71v3")
 GiftWindows = []
 Movement = NodePath("Movement")
 Talking = NodePath("Talking")
@@ -54,30 +55,30 @@ Hat = NodePath("Sprites/Body/Head/Hat")
 
 [node name="Shadow" type="Sprite2D" parent="Sprites"]
 texture_filter = 6
-texture = ExtResource("3_8vw3l")
+texture = ExtResource("2_ie7dd")
 
 [node name="FootL" type="Sprite2D" parent="Sprites"]
 modulate = Color(0.258, 0.344, 0.43, 1)
 texture_filter = 6
-texture = ExtResource("5_4ggc3")
+texture = ExtResource("3_uta4l")
 
 [node name="FootR" type="Sprite2D" parent="Sprites"]
 modulate = Color(0.258, 0.344, 0.43, 1)
 texture_filter = 6
-texture = ExtResource("6_rs8w8")
+texture = ExtResource("4_e7m45")
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
-self_modulate = Color(0.45, 0.6, 0.48, 1)
+self_modulate = Color(0.66970086, 0.45203674, 0.7824972, 1)
 texture_filter = 6
-texture = ExtResource("4_s58av")
+texture = ExtResource("5_mxp5x")
 
 [node name="Head" type="Sprite2D" parent="Sprites/Body"]
 texture_filter = 6
-texture = ExtResource("9_48rot")
+texture = ExtResource("6_i36sj")
 
 [node name="Hair" type="Sprite2D" parent="Sprites/Body/Head"]
 texture_filter = 6
-texture = ExtResource("12_i6xa8")
+texture = ExtResource("7_tyaj5")
 
 [node name="Hat" type="Sprite2D" parent="Sprites/Body/Head"]
 texture_filter = 6
@@ -87,59 +88,65 @@ position = Vector2(0, -500)
 
 [node name="EyeBg" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
 texture_filter = 6
-texture = ExtResource("9_8e8y2")
+texture = ExtResource("8_05ret")
 
 [node name="Eyes" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
 texture_filter = 6
-texture = ExtResource("10_oh2s8")
+texture = ExtResource("9_m5exj")
 
 [node name="Glasses" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+visible = false
 texture_filter = 6
-texture = ExtResource("11_rjpdn")
+texture = ExtResource("10_gqw7e")
 
 [node name="Mouth" type="Node2D" parent="Sprites/Body/Head/LookRoot"]
 
 [node name="Happy" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 texture_filter = 6
-texture = ExtResource("13_tbbe6")
+texture = ExtResource("11_cthy3")
 
 [node name="Open" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
 texture_filter = 6
-texture = ExtResource("14_ubqnw")
+texture = ExtResource("12_opavj")
 
 [node name="Teeth" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
 texture_filter = 6
-texture = ExtResource("15_a1tqi")
+texture = ExtResource("13_6u1p8")
 
 [node name="Whistle" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
 visible = false
 texture_filter = 6
-texture = ExtResource("14_pafl3")
+texture = ExtResource("14_iyoep")
+
+[node name="HairBG" type="Sprite2D" parent="Sprites/Body/Head"]
+z_index = -1
+texture_filter = 6
+texture = ExtResource("15_e3c74")
 
 [node name="HandL" type="Sprite2D" parent="Sprites/Body"]
 texture_filter = 6
-texture = ExtResource("7_o14w4")
+texture = ExtResource("15_2np4q")
 
 [node name="HandR" type="Sprite2D" parent="Sprites/Body"]
 texture_filter = 6
-texture = ExtResource("8_tevsp")
+texture = ExtResource("16_t1472")
 
 [node name="Note1" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 6
-texture = ExtResource("18_ks6pq")
+texture = ExtResource("17_vxhef")
 
 [node name="Note2" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 6
-texture = ExtResource("19_eeovw")
+texture = ExtResource("18_sqyjj")
 
 [node name="Animations" type="Node" parent="."]
 
 [node name="WalkAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Left", "Right", "Body", "HandLeft", "HandRight")]
-script = ExtResource("20_5hdi6")
+script = ExtResource("19_ll26j")
 Left = NodePath("../../Sprites/FootL")
 Right = NodePath("../../Sprites/FootR")
 Body = NodePath("../../Sprites/Body")
@@ -147,69 +154,69 @@ HandLeft = NodePath("../../Sprites/Body/HandL")
 HandRight = NodePath("../../Sprites/Body/HandR")
 
 [node name="EyeAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Eyes", "LookRoot")]
-script = ExtResource("20_4b2l3")
+script = ExtResource("20_382k3")
 Eyes = NodePath("../../Sprites/Body/Head/LookRoot/Eyes")
 LookRoot = NodePath("../../Sprites/Body/Head/LookRoot")
 
 [node name="MouthAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Mouths")]
-script = ExtResource("19_5fsx7")
+script = ExtResource("21_dmcn0")
 Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Happy"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Open"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Teeth"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/Whistle")]
 
 [node name="HandAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("HandL", "HandR")]
-script = ExtResource("20_kso8b")
+script = ExtResource("22_klfmo")
 HandL = NodePath("../../Sprites/Body/HandL")
 HandR = NodePath("../../Sprites/Body/HandR")
 
 [node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
-script = ExtResource("15_vmci5")
+script = ExtResource("23_gk1k0")
 Behaviors = [NodePath("Wave"), NodePath("Walk"), NodePath("Idle"), NodePath("Point"), NodePath("Fly"), NodePath("Land"), NodePath("Talk"), NodePath("Push"), NodePath("Whistle"), NodePath("Sit"), NodePath("Gift")]
 
 [node name="Walk" type="Node" parent="Behavior"]
-script = ExtResource("21_n7m6j")
+script = ExtResource("24_5j13w")
 
 [node name="Idle" type="Node" parent="Behavior"]
-script = ExtResource("22_tp350")
+script = ExtResource("25_75j35")
 
 [node name="Point" type="Node" parent="Behavior"]
-script = ExtResource("23_6p3h1")
+script = ExtResource("26_i7nqt")
 
 [node name="Wave" type="Node" parent="Behavior"]
-script = ExtResource("24_v0261")
+script = ExtResource("27_m2dpk")
 Greetings = PackedStringArray("Hej Caela <3", "Hej!", "Heeej", "Läget?", "Vad gör duuu?", "Jag heter Mini-Harald!", "God jul!")
 
 [node name="Fly" type="Node" parent="Behavior"]
-script = ExtResource("25_d1klc")
+script = ExtResource("28_j7rsi")
 IsNormal = false
 
 [node name="Land" type="Node" parent="Behavior"]
-script = ExtResource("26_aueml")
+script = ExtResource("29_atnu8")
 IsNormal = false
 
 [node name="Talk" type="Node" parent="Behavior"]
-script = ExtResource("28_r3ft8")
+script = ExtResource("30_gi5yg")
 Talks = PackedStringArray("Jag nog har en låt du skulle gilla!", "Åh jag ser fram emot bågskyttet", "Det fanns dinosaurier som vägde 80 ton!", "Mmm... En monster...", "Vilken är din favorithaj?", "Vänta bara tills du kommer till Bombadill :)", "Är det där skola??", "Din dator är mitt privata jetplan", "Vill du spela guitar hero med mig?", "Kanske dags för en löprunda...", "Är det okej att jag står här?", "Det är lite kul att titta på!", "Harald saknar dig <3", "Tror att Harald tänker på dig just nu...", "Tihi", "Dags att ställa till trubbel...", "Hmm...", "Ra Ra Rasputin!")
 TalkDuration = 3.0
 
 [node name="Push" type="Node" parent="Behavior"]
-script = ExtResource("31_mb8i2")
+script = ExtResource("31_vesjj")
 
 [node name="Whistle" type="Node" parent="Behavior" node_paths=PackedStringArray("Notes", "Mouth")]
-script = ExtResource("30_qr6pe")
+script = ExtResource("32_qm70x")
 Notes = [NodePath("../../Sprites/Note1"), NodePath("../../Sprites/Note2")]
 Mouth = NodePath("../../Sprites/Body/Head/LookRoot/Mouth")
 Texts = PackedStringArray("Bra låt!", "Banger", "Ska lägga till den på Spotify", "Önskar att jag hade en dans-animation!")
 
 [node name="Sit" type="Node" parent="Behavior"]
-script = ExtResource("33_esite")
+script = ExtResource("33_dyb0i")
 
 [node name="Gift" type="Node" parent="Behavior"]
-script = ExtResource("34_w3xn4")
+script = ExtResource("34_lih2y")
 Texts = PackedStringArray("Varsågod!", "En julklapp!", "Tadaa!", "Till dig!", "God jul!", "Till Caela!", "Från tomten!")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
-script = ExtResource("19_ju3pi")
+script = ExtResource("35_y10t7")
 Shadow = NodePath("../Sprites/Shadow")
 
 [node name="Talking" type="Node" parent="." node_paths=PackedStringArray("Character")]
-script = ExtResource("29_juq6x")
+script = ExtResource("36_q3ons")
 Character = NodePath("..")
