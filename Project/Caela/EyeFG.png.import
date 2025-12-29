@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvrvahy6s62jq"
-path.s3tc="res://.godot/imported/FootR.png-7b0e54698ec4aa4ae045531f23e87c20.s3tc.ctex"
+uid="uid://68tuf4druf3b"
+path.s3tc="res://.godot/imported/EyeFG.png-bfe6a3760d35e181289945a930fe6555.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Harald/FootR.png"
-dest_files=["res://.godot/imported/FootR.png-7b0e54698ec4aa4ae045531f23e87c20.s3tc.ctex"]
+source_file="res://Caela/EyeFG.png"
+dest_files=["res://.godot/imported/EyeFG.png-bfe6a3760d35e181289945a930fe6555.s3tc.ctex"]
 
 [params]
 

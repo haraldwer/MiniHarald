@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0hps81peak8b"]
+
+[ext_resource type="PackedScene" uid="uid://dc0ersk5lcqv1" path="res://Cats/CatCream.tscn" id="1_ijtcr"]
+
+[node name="Character" node_paths=PackedStringArray("Colorized") instance=ExtResource("1_ijtcr")]
+Colorized = []
+
+[node name="PawBackL" parent="Sprites" index="1"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="PawBackR" parent="Sprites" index="2"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Tail" parent="Sprites/Body" index="0"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="BodyBG" parent="Sprites/Body" index="1"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Pattern" parent="Sprites/Body/BodyBG" index="0"]
+visible = false
+
+[node name="Head" parent="Sprites/Body" index="3"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Pattern" parent="Sprites/Body/Head" index="0"]
+visible = false
+
+[node name="PatternNose" parent="Sprites/Body/Head/LookRoot/Mouth" index="2"]
+visible = false
+
+[node name="PawFrontL" parent="Sprites" index="4"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="PawFrontR" parent="Sprites" index="5"]
+self_modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)

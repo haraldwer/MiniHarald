@@ -4,6 +4,30 @@ using System.IO;
 
 public partial class GiftWindow : Window
 {
+	public string param = "";
+
+    public override void _EnterTree()
+    {
+        base._EnterTree();
+
+        foreach (var arg in System.Environment.GetCommandLineArgs())
+        {
+            if (arg.StartsWith("-pos"))
+			{
+				var split = arg.Substring(4).Split('x');
+				if (split.Length < 2)
+					return;
+				try
+				{
+					var posX = split[0].ToInt();
+					var posY = split[1].ToInt();
+					GetWindow().Position = new Vector2I(posX, posY);
+				}
+				catch { }
+			}
+        }
+    }
+
 	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventMouseButton {Pressed: true} mouseEvent)
@@ -20,10 +44,16 @@ public partial class GiftWindow : Window
 				if (File.Exists(exePath2))
 					exePath = exePath2;
 				if (!File.Exists(exePath))
+				{
+					GD.Print("Couldnt find exe: " + exePath);
 					return;
-				
+				}
+
 				Process process = new Process();
 				process.StartInfo.FileName = exePath;
+				if (param != "")
+                    process.StartInfo.ArgumentList.Add("-" + param);
+				process.StartInfo.ArgumentList.Add("-pos" + Position.X + "x" + Position.Y);
 				process.Start();
 				Visible = false;
 			}

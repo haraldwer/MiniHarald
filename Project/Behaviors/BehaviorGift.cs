@@ -12,13 +12,21 @@ public partial class BehaviorGift : Behavior
     [Export] private double MoveDuration = 2.0;
     [Export] private double WaitDuration = 0.5;
     [Export] private double GiftChance = 0.2;
+    [Export] private int Gifts = 1;
     
     private int GiftIndex = -1;
     private Vector2 GiftPos;
     private double Duration;
+    private int Given = 0;
     
     public override void Enter()
     {
+        if (Given >= Gifts)
+        {
+            GiftIndex = -1;
+            return;
+        }
+
         var c = Character.Get();
         if (c.Rnd.Randf() > GiftChance)
         {
@@ -32,6 +40,15 @@ public partial class BehaviorGift : Behavior
         {
             GiftIndex = -1;
             return;
+        }
+
+        switch (CharacterSelector.GetCharacter())
+        {
+            case "Harald": gift.param = "Caela"; break;
+            case "Caela": gift.param = Given == 0 ? "CatBlack" : "CatCream"; break;
+            default:
+                GiftIndex = -1;
+                return;
         }
 
         Duration = 0;
@@ -76,6 +93,7 @@ public partial class BehaviorGift : Behavior
         if (Duration > MoveDuration + WaitDuration)
         {
             c.Talking.Say(Texts[c.Rnd.RandiRange(0, Texts.Length - 1)]);
+            Given++;
             return Get<BehaviorIdle>();
         }
         return null;

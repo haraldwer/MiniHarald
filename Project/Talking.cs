@@ -46,7 +46,7 @@ public partial class Talking : Node
 			while (mouth == CurrMouth)
 				mouth = Character.Get().Rnd.RandiRange(0, 1);
 			CurrMouth = mouth;
-			Character.Mouth.Set((MouthAnimator.MouthType)mouth);
+			Character.Mouth?.Set((MouthAnimator.MouthType)mouth);
 			MouthCountdown = Character.Get().Rnd.RandfRange(MouthMovementMin, MouthMovementMax);
 		}
 		
@@ -58,7 +58,7 @@ public partial class Talking : Node
 		{
 			Character.Label.Text = "";
 			Character.TextWindow.SetVisible(false);
-			Character.Mouth.Set(MouthAnimator.MouthType.SMILE);
+			Character.Mouth?.Set(MouthAnimator.MouthType.SMILE);
 		}
 	}
 }

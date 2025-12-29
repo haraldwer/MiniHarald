@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvrvahy6s62jq"
-path.s3tc="res://.godot/imported/FootR.png-7b0e54698ec4aa4ae045531f23e87c20.s3tc.ctex"
+uid="uid://dw8fhwdrn5cby"
+path.s3tc="res://.godot/imported/MouthOpen.png-25bacb6311fe817208fcfcc81b4e92cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Harald/FootR.png"
-dest_files=["res://.godot/imported/FootR.png-7b0e54698ec4aa4ae045531f23e87c20.s3tc.ctex"]
+source_file="res://Cats/MouthOpen.png"
+dest_files=["res://.godot/imported/MouthOpen.png-25bacb6311fe817208fcfcc81b4e92cc.s3tc.ctex"]
 
 [params]
 

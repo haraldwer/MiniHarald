@@ -1,0 +1,187 @@
+[gd_scene load_steps=28 format=3 uid="uid://dc0ersk5lcqv1"]
+
+[ext_resource type="Script" uid="uid://bsf5fgwcuprx3" path="res://Character.cs" id="1_rdekv"]
+[ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="2_pa5xs"]
+[ext_resource type="Texture2D" uid="uid://d3er4npy3ww4w" path="res://Cats/PawFrontL.png" id="3_vr367"]
+[ext_resource type="Texture2D" uid="uid://t4n586ce7jsb" path="res://Cats/PawFrontR.png" id="4_qtwaj"]
+[ext_resource type="Texture2D" uid="uid://chdr8pm7nyg63" path="res://Cats/BodyBG.png" id="5_o4w4f"]
+[ext_resource type="Texture2D" uid="uid://crdsj0y2ndrn4" path="res://Cats/BodyPattern.png" id="6_1oqdw"]
+[ext_resource type="Texture2D" uid="uid://bblfy4u70wdr6" path="res://Cats/tail.png" id="6_dkgh1"]
+[ext_resource type="Texture2D" uid="uid://c4muqldhdbd2q" path="res://Cats/BodyFrame.png" id="7_yrssm"]
+[ext_resource type="Texture2D" uid="uid://ctt62h8p0mbv3" path="res://Cats/HeadBG.png" id="8_sngqj"]
+[ext_resource type="Texture2D" uid="uid://vj4lou7rjbnw" path="res://Cats/HeadPattern.png" id="9_q2v6d"]
+[ext_resource type="Texture2D" uid="uid://d0gyu3pebbo7t" path="res://Cats/HeadFrame.png" id="10_hxdis"]
+[ext_resource type="Texture2D" uid="uid://cnv6sjag2wqxh" path="res://Cats/Eyes.png" id="11_behjd"]
+[ext_resource type="Texture2D" uid="uid://swj2ktlsx00e" path="res://Cats/Mouth.png" id="12_4dhh4"]
+[ext_resource type="Texture2D" uid="uid://dw8fhwdrn5cby" path="res://Cats/MouthOpen.png" id="13_dlbr4"]
+[ext_resource type="Texture2D" uid="uid://b7cpaxp57ttq4" path="res://Cats/NosePattern.png" id="14_xnbf6"]
+[ext_resource type="Script" uid="uid://26p62no51wr6" path="res://Animations/MouthAnimator.cs" id="18_hpggl"]
+[ext_resource type="Script" uid="uid://b0nlo0k3tot4m" path="res://Animations/WalkAnimator.cs" id="20_so4qs"]
+[ext_resource type="Script" uid="uid://b5ta1cgi7ijvv" path="res://Animations/EyeAnimator.cs" id="21_cpr5l"]
+[ext_resource type="Script" uid="uid://wbj7vg7rko2q" path="res://Behaviors/BehaviorTalk.cs" id="22_ts231"]
+[ext_resource type="Script" uid="uid://n58albk06g7y" path="res://Behaviors/BehaviorManager.cs" id="24_1a7g6"]
+[ext_resource type="Script" uid="uid://dkbbf5exp8a56" path="res://Behaviors/BehaviorWalk.cs" id="25_k8uxd"]
+[ext_resource type="Script" uid="uid://b5ftaqtwo3xab" path="res://Behaviors/BehaviorIdle.cs" id="26_ksghv"]
+[ext_resource type="Script" uid="uid://ccmqu83mxbwet" path="res://Behaviors/BehaviorFly.cs" id="29_mq40h"]
+[ext_resource type="Script" uid="uid://dxv83qeo55guv" path="res://Behaviors/BehaviorLand.cs" id="30_yrwj3"]
+[ext_resource type="Script" uid="uid://c4il3mjx0uae0" path="res://Behaviors/BehaviorSit.cs" id="33_bymis"]
+[ext_resource type="Script" uid="uid://c3tev0ve88iu8" path="res://Movement.cs" id="35_vl1ge"]
+[ext_resource type="Script" uid="uid://dco824wn887gs" path="res://Talking.cs" id="36_lv83i"]
+
+[node name="Character" type="Node2D" node_paths=PackedStringArray("GiftWindows", "Movement", "Talking", "Behavior", "Eyes", "Mouth", "Walk", "Colorized", "Hat")]
+script = ExtResource("1_rdekv")
+GiftWindows = []
+Movement = NodePath("Movement")
+Talking = NodePath("Talking")
+Behavior = NodePath("Behavior")
+Eyes = NodePath("Animations/EyeAnimator")
+Mouth = NodePath("Animations/MouthAnimator")
+Walk = NodePath("Animations/WalkAnimator")
+Colorized = []
+Hat = NodePath("Sprites/Body/Head/Hat")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+position = Vector2(8, 127.035)
+texture = ExtResource("2_pa5xs")
+offset = Vector2(0, 70)
+
+[node name="PawBackL" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+texture = ExtResource("3_vr367")
+offset = Vector2(-70, -70)
+
+[node name="PawBackR" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+texture = ExtResource("4_qtwaj")
+offset = Vector2(70, -70)
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+
+[node name="Tail" type="Sprite2D" parent="Sprites/Body"]
+texture = ExtResource("6_dkgh1")
+
+[node name="BodyBG" type="Sprite2D" parent="Sprites/Body"]
+texture = ExtResource("5_o4w4f")
+offset = Vector2(0, -70)
+
+[node name="Pattern" type="Sprite2D" parent="Sprites/Body/BodyBG"]
+texture = ExtResource("6_1oqdw")
+offset = Vector2(0, -70)
+
+[node name="Frame" type="Sprite2D" parent="Sprites/Body"]
+texture = ExtResource("7_yrssm")
+offset = Vector2(0, -70)
+
+[node name="Head" type="Sprite2D" parent="Sprites/Body"]
+texture_filter = 6
+texture = ExtResource("8_sngqj")
+
+[node name="Pattern" type="Sprite2D" parent="Sprites/Body/Head"]
+texture_filter = 6
+texture = ExtResource("9_q2v6d")
+
+[node name="Frame" type="Sprite2D" parent="Sprites/Body/Head"]
+texture_filter = 6
+texture = ExtResource("10_hxdis")
+
+[node name="Hat" type="Sprite2D" parent="Sprites/Body/Head"]
+texture_filter = 6
+position = Vector2(20, -230)
+
+[node name="LookRoot" type="Node2D" parent="Sprites/Body/Head"]
+
+[node name="Eyes" type="Sprite2D" parent="Sprites/Body/Head/LookRoot"]
+texture_filter = 6
+texture = ExtResource("11_behjd")
+
+[node name="Mouth" type="Node2D" parent="Sprites/Body/Head/LookRoot"]
+
+[node name="MouthDefault" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
+texture_filter = 6
+texture = ExtResource("12_4dhh4")
+
+[node name="MouthOpen" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
+visible = false
+texture_filter = 6
+texture = ExtResource("13_dlbr4")
+
+[node name="PatternNose" type="Sprite2D" parent="Sprites/Body/Head/LookRoot/Mouth"]
+texture_filter = 6
+texture = ExtResource("14_xnbf6")
+
+[node name="PawFrontL" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+texture = ExtResource("3_vr367")
+
+[node name="PawFrontR" type="Sprite2D" parent="Sprites"]
+texture_filter = 6
+texture = ExtResource("4_qtwaj")
+
+[node name="Animations" type="Node" parent="."]
+
+[node name="WalkAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Left", "Right", "LeftBack", "RightBack", "Body", "Head", "Tail")]
+script = ExtResource("20_so4qs")
+Left = NodePath("../../Sprites/PawFrontL")
+Right = NodePath("../../Sprites/PawFrontR")
+LeftBack = NodePath("../../Sprites/PawBackL")
+RightBack = NodePath("../../Sprites/PawBackR")
+Body = NodePath("../../Sprites/Body")
+Head = NodePath("../../Sprites/Body/Head")
+Tail = NodePath("../../Sprites/Body/Tail")
+StepDuration = 0.15
+StepDistance = 70.0
+BounceHeight = -20.0
+BackOffset = Vector2(-50, -30)
+HeadOffset = Vector2(-100, -50)
+TailOffset = Vector2(-200, -70)
+
+[node name="EyeAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Eyes", "LookRoot")]
+script = ExtResource("21_cpr5l")
+EyeOffset = 10.0
+Eyes = NodePath("../../Sprites/Body/Head/LookRoot/Eyes")
+LookRoot = NodePath("../../Sprites/Body/Head/LookRoot")
+
+[node name="MouthAnimator" type="Node" parent="Animations" node_paths=PackedStringArray("Mouths")]
+script = ExtResource("18_hpggl")
+Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/MouthDefault"), NodePath("../../Sprites/Body/Head/LookRoot/Mouth/MouthOpen")]
+
+[node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
+script = ExtResource("24_1a7g6")
+Behaviors = [NodePath("Walk"), NodePath("Idle"), NodePath("Fly"), NodePath("Land"), NodePath("Sit"), NodePath("Talk")]
+
+[node name="Walk" type="Node" parent="Behavior"]
+script = ExtResource("25_k8uxd")
+CursorDist = 1000.0
+
+[node name="Idle" type="Node" parent="Behavior"]
+script = ExtResource("26_ksghv")
+
+[node name="Fly" type="Node" parent="Behavior"]
+script = ExtResource("29_mq40h")
+Texts = PackedStringArray()
+IsNormal = false
+
+[node name="Land" type="Node" parent="Behavior"]
+script = ExtResource("30_yrwj3")
+IsNormal = false
+
+[node name="Sit" type="Node" parent="Behavior"]
+script = ExtResource("33_bymis")
+UseWindow = false
+
+[node name="Talk" type="Node" parent="Behavior"]
+script = ExtResource("22_ts231")
+Talks = PackedStringArray("Meow", "Brrrrrrrr", "Mjauuu", "MJAU!", "Meooww")
+TalkDuration = 2.0
+
+[node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
+script = ExtResource("35_vl1ge")
+Shadow = NodePath("../Sprites/Shadow")
+
+[node name="Talking" type="Node" parent="." node_paths=PackedStringArray("Character")]
+script = ExtResource("36_lv83i")
+Character = NodePath("..")

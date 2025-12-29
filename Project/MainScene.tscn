@@ -1,30 +1,53 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4bljerm8um4c"]
+[gd_scene load_steps=11 format=3 uid="uid://d4bljerm8um4c"]
 
+[ext_resource type="Script" uid="uid://b7ot2tken138a" path="res://CharacterSelector.cs" id="1_5crlr"]
 [ext_resource type="PackedScene" uid="uid://dabpfinjtkhxr" path="res://Harald/Harald.tscn" id="1_xn544"]
 [ext_resource type="PackedScene" uid="uid://bn83yho4mirt8" path="res://Caela/Caela.tscn" id="2_a814b"]
 [ext_resource type="Script" uid="uid://c34p0yhmfxagq" path="res://TextWindow.cs" id="2_odrs6"]
 [ext_resource type="FontFile" uid="uid://ckp5d6kt1jnm3" path="res://GorriSans.ttf" id="3_hdqq5"]
 [ext_resource type="Texture2D" uid="uid://bi84tyh4f4n7g" path="res://Gifts/Gift1.png" id="4_a3drh"]
 [ext_resource type="Script" uid="uid://cv62s0jq76fva" path="res://GiftWindow.cs" id="4_a67vf"]
+[ext_resource type="PackedScene" uid="uid://dc0ersk5lcqv1" path="res://Cats/CatCream.tscn" id="4_torvr"]
+[ext_resource type="PackedScene" uid="uid://c0hps81peak8b" path="res://Cats/CatBlack.tscn" id="5_8xkvn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2xf2q"]
 line_spacing = 0.0
 font = ExtResource("3_hdqq5")
-font_size = 24
+font_size = 18
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("Harald", "Caela", "CatCream", "CatBlack")]
+script = ExtResource("1_5crlr")
+Harald = NodePath("Harald")
+Caela = NodePath("Caela")
+CatCream = NodePath("CatCream")
+CatBlack = NodePath("CatBlack")
 
-[node name="Harald" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows") instance=ExtResource("1_xn544")]
+[node name="Harald" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows", "Colorized") instance=ExtResource("1_xn544")]
 position = Vector2(75, 80)
 scale = Vector2(0.06, 0.06)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 GiftWindows = [NodePath("../GiftWindow")]
+Colorized = []
 
-[node name="Caela" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("2_a814b")]
+[node name="Caela" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows", "Colorized") instance=ExtResource("2_a814b")]
+position = Vector2(75, 80)
+scale = Vector2(0.06, 0.06)
+Label = NodePath("../Window/GridContainer/Label")
+TextWindow = NodePath("../Window")
+GiftWindows = [NodePath("../GiftWindow")]
+Colorized = []
+
+[node name="CatCream" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("4_torvr")]
+position = Vector2(75, 80)
+scale = Vector2(0.06, 0.06)
+Label = NodePath("../Window/GridContainer/Label")
+TextWindow = NodePath("../Window")
+
+[node name="CatBlack" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("5_8xkvn")]
 position = Vector2(75, 80)
 scale = Vector2(0.06, 0.06)
 Label = NodePath("../Window/GridContainer/Label")
@@ -43,7 +66,7 @@ transparent = true
 unfocusable = true
 mouse_passthrough = true
 script = ExtResource("2_odrs6")
-Offset = Vector2i(110, -30)
+Offset = Vector2i(95, 10)
 
 [node name="GridContainer" type="MarginContainer" parent="Window"]
 anchors_preset = 2

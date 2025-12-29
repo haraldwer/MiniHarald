@@ -7,7 +7,7 @@ public partial class Character : Node2D
 {
 	[Export] public Label Label;
 	[Export] public TextWindow TextWindow;
-	[Export] public Window[] GiftWindows;
+	[Export] public GiftWindow[] GiftWindows;
 	[Export] public Movement Movement;
 	[Export] public Talking Talking;
 	[Export] public BehaviorManager Behavior;
@@ -15,27 +15,29 @@ public partial class Character : Node2D
 	[Export] public MouthAnimator Mouth;
 	[Export] public WalkAnimator Walk;
 	[Export] public HandAnimator Hands;
-	[Export] public Sprite2D Shirt;
+	[Export] public Sprite2D[] Colorized;
 	[Export] public Sprite2D Hat;
 	
 	private static Character? Instance;
 	public RandomNumberGenerator Rnd = new();
-	
-	Character()
-	{
-		Instance = this;
-	}
 
 	public override void _Ready()
 	{
 		base._Ready();
-		
-		//AutoGenMips();
 
-		var c = Shirt.SelfModulate;
-		Shirt.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
+		if (IsQueuedForDeletion())
+			return;
+
+		Instance = this;
+		
+		foreach (var col in Colorized)
+		{
+			var c = col.SelfModulate;
+			col.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
+		}
 		
 		GetWindow().FilesDropped += OnFilesDropped;
+		Interprocedural.Init();
 	}
 
 	void AutoGenMips()
@@ -138,7 +140,8 @@ public partial class Character : Node2D
 				switch (mouseEvent.ButtonIndex)
 				{
 					case MouseButton.Right:
-						Behavior.Set(Behavior.Get<BehaviorWave>());
+						var wave = Behavior.Get<BehaviorWave>();
+						Behavior.Set(wave == null ? Behavior.Get<BehaviorTalk>() : wave);
 						break;
 					case MouseButton.Left:
 						Behavior.Set(Behavior.Get<BehaviorFly>());
