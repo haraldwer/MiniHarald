@@ -9,7 +9,7 @@ public partial class GiftWindow : Window
     public override void _EnterTree()
     {
         base._EnterTree();
-
+		return;
         foreach (var arg in System.Environment.GetCommandLineArgs())
         {
             if (arg.StartsWith("-pos"))
@@ -37,15 +37,18 @@ public partial class GiftWindow : Window
 				GD.Print("Dir: " + Directory.GetCurrentDirectory());
 				string path = Directory.GetCurrentDirectory();
 				string exePath1 = Path.Combine(path, "MiniHarald.exe");
-				string exePath2 = Path.Combine(path, "../Publish/windows/MiniHarald.exe");
+				string exePath2 = Path.Combine(path, "../Publish/windows/MiniHarald.console.exe");
+				string exePath3 = Path.Combine(path, "../Publish/windows/MiniHarald.exe");
 				string exePath = "";
 				if (File.Exists(exePath1))
 					exePath = exePath1;
-				if (File.Exists(exePath2))
+				else if (File.Exists(exePath2))
 					exePath = exePath2;
-				if (!File.Exists(exePath))
+				else if (File.Exists(exePath3))
+					exePath = exePath3;
+				else
 				{
-					GD.Print("Couldnt find exe: " + exePath);
+					GD.Print("Couldnt find exe");
 					return;
 				}
 

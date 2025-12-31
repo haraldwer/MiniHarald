@@ -68,8 +68,6 @@ public partial class BehaviorSit : Behavior
 				return Get<BehaviorIdle>();
 			}
 
-			GD.Print(targetPos);
-		
 			// If too far away
 			// If not yet seated, walk towards
 			if (targetPos.DistanceTo(pos) > MinDist && !Seated)
@@ -125,8 +123,6 @@ public partial class BehaviorSit : Behavior
 				(float)Math.Sin(Countdown * 2) * 20 + 150,
 				(float)Math.Sin(Countdown * 1.567) * 50 - 800);
 		}
-
-		GD.Print(Countdown);
 
 		Countdown -= InDelta;
 		if (Countdown < 0)

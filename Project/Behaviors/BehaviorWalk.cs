@@ -62,6 +62,7 @@ public partial class BehaviorWalk : Behavior
 		var diff = Target - p;
 		if (diff.Length() < 10.0)
 		{
+			GD.Print("Walk cancelled, within distance of target");
 			if (NextBehavior != null)
 				return NextBehavior;
 			return Get<BehaviorIdle>();

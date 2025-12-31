@@ -1,7 +1,7 @@
+using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Godot;
 
 public partial class Character : Node2D
 {
@@ -18,6 +18,7 @@ public partial class Character : Node2D
 	[Export] public Sprite2D[] Colorized;
 	[Export] public Sprite2D Hat;
 	
+	public bool Human = true;
 	private static Character? Instance;
 	public RandomNumberGenerator Rnd = new();
 
@@ -29,7 +30,9 @@ public partial class Character : Node2D
 			return;
 
 		Instance = this;
-		
+		Human = !CharacterSelector.GetCharacter().Contains("Cat");
+		Rnd.Seed = (ulong)((int)DateTime.Now.Ticks & 0x0000FFFF); // reduce to int range
+
 		foreach (var col in Colorized)
 		{
 			var c = col.SelfModulate;
@@ -37,7 +40,16 @@ public partial class Character : Node2D
 		}
 		
 		GetWindow().FilesDropped += OnFilesDropped;
-		Interprocedural.Init();
+		Movement.SetPos(WorldToChar(ScreenToWorld(MousePos())));
+		
+		Interprocedural.Get().Init();
+	}
+
+	public override void _ExitTree()
+	{
+		if (Instance == this)
+			Interprocedural.Get().Deinit();
+		base._ExitTree();
 	}
 
 	void AutoGenMips()
@@ -85,7 +97,8 @@ public partial class Character : Node2D
 		var tex = ImageTexture.CreateFromImage(image);
 		Hat.Texture = tex;
 		Hat.Rotation = Mathf.DegToRad(Rnd.RandfRange(-15, 15));
-		Talking.Say("En mössa!");
+		if (Human)
+			Talking.Say("En mössa!");
 	}
 
 	public static Character Get() => Instance;
@@ -152,6 +165,30 @@ public partial class Character : Node2D
 			{
 				if (Behavior.GetCurrent()?.GetType() == typeof(BehaviorFly))
 					Behavior.Set(Behavior.Get<BehaviorLand>());
+			}
+		}
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+
+		// Read messages
+		while (Interprocedural.Get().ReceivedMessages.TryDequeue(out var msg))
+		{
+			switch (msg.message)
+			{
+				case "RequestHug":
+					Behavior.Get<BehaviorHug>().HugRequested(msg);
+					break;
+
+				case "AcceptHug":
+					Behavior.Get<BehaviorHug>().AcceptHug(msg);
+					break;
+
+				default:
+					GD.Print("Unknown message type: " + msg.message);
+					break;
 			}
 		}
 	}

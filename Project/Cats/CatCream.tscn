@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dc0ersk5lcqv1"]
+[gd_scene load_steps=29 format=3 uid="uid://dc0ersk5lcqv1"]
 
 [ext_resource type="Script" uid="uid://bsf5fgwcuprx3" path="res://Character.cs" id="1_rdekv"]
 [ext_resource type="Texture2D" uid="uid://wxu32nqjqa4g" path="res://Harald/Shadow.png" id="2_pa5xs"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://wbj7vg7rko2q" path="res://Behaviors/BehaviorTalk.cs" id="22_ts231"]
 [ext_resource type="Script" uid="uid://n58albk06g7y" path="res://Behaviors/BehaviorManager.cs" id="24_1a7g6"]
 [ext_resource type="Script" uid="uid://dkbbf5exp8a56" path="res://Behaviors/BehaviorWalk.cs" id="25_k8uxd"]
+[ext_resource type="Script" uid="uid://d2iigr776c0j1" path="res://Behaviors/BehaviorHug.cs" id="26_hpggl"]
 [ext_resource type="Script" uid="uid://b5ftaqtwo3xab" path="res://Behaviors/BehaviorIdle.cs" id="26_ksghv"]
 [ext_resource type="Script" uid="uid://ccmqu83mxbwet" path="res://Behaviors/BehaviorFly.cs" id="29_mq40h"]
 [ext_resource type="Script" uid="uid://dxv83qeo55guv" path="res://Behaviors/BehaviorLand.cs" id="30_yrwj3"]
@@ -151,7 +152,7 @@ Mouths = [NodePath("../../Sprites/Body/Head/LookRoot/Mouth/MouthDefault"), NodeP
 
 [node name="Behavior" type="Node" parent="." node_paths=PackedStringArray("Behaviors")]
 script = ExtResource("24_1a7g6")
-Behaviors = [NodePath("Walk"), NodePath("Idle"), NodePath("Fly"), NodePath("Land"), NodePath("Sit"), NodePath("Talk")]
+Behaviors = [NodePath("Walk"), NodePath("Idle"), NodePath("Fly"), NodePath("Land"), NodePath("Sit"), NodePath("Talk"), NodePath("Hug")]
 
 [node name="Walk" type="Node" parent="Behavior"]
 script = ExtResource("25_k8uxd")
@@ -177,6 +178,9 @@ UseWindow = false
 script = ExtResource("22_ts231")
 Talks = PackedStringArray("Meow", "Brrrrrrrr", "Mjauuu", "MJAU!", "Meooww")
 TalkDuration = 2.0
+
+[node name="Hug" type="Node" parent="Behavior"]
+script = ExtResource("26_hpggl")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
 script = ExtResource("35_vl1ge")

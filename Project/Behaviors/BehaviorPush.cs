@@ -5,8 +5,8 @@ using NewGameProject;
 public partial class BehaviorPush : Behavior
 {
     [Export] private float MinDist = 50.0f;
-    [Export] private float MinPushDuration = 2.0f;
-    [Export] private float MaxPushDuration = 5.0f;
+    [Export] private float MinPushDuration = 1.5f;
+    [Export] private float MaxPushDuration = 3.0f;
     [Export] private Vector2 Push = Vector2.Right * 50.0f;
 
     [Export] private Vector2 LeftOffset = new(700, -400);

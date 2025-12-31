@@ -27,7 +27,7 @@ CatBlack = NodePath("CatBlack")
 
 [node name="Harald" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows", "Colorized") instance=ExtResource("1_xn544")]
 position = Vector2(75, 80)
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.05, 0.05)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 GiftWindows = [NodePath("../GiftWindow")]
@@ -35,7 +35,7 @@ Colorized = []
 
 [node name="Caela" parent="." node_paths=PackedStringArray("Label", "TextWindow", "GiftWindows", "Colorized") instance=ExtResource("2_a814b")]
 position = Vector2(75, 80)
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.05, 0.05)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 GiftWindows = [NodePath("../GiftWindow")]
@@ -43,13 +43,13 @@ Colorized = []
 
 [node name="CatCream" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("4_torvr")]
 position = Vector2(75, 80)
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.05, 0.05)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 
 [node name="CatBlack" parent="." node_paths=PackedStringArray("Label", "TextWindow") instance=ExtResource("5_8xkvn")]
 position = Vector2(75, 80)
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.05, 0.05)
 Label = NodePath("../Window/GridContainer/Label")
 TextWindow = NodePath("../Window")
 
@@ -66,7 +66,7 @@ transparent = true
 unfocusable = true
 mouse_passthrough = true
 script = ExtResource("2_odrs6")
-Offset = Vector2i(95, 10)
+Offset = Vector2i(105, 0)
 
 [node name="GridContainer" type="MarginContainer" parent="Window"]
 anchors_preset = 2

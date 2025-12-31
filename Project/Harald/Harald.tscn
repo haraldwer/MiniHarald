@@ -212,6 +212,7 @@ GiftChance = 1.0
 
 [node name="Hug" type="Node" parent="Behavior"]
 script = ExtResource("35_rqnuw")
+Words = PackedStringArray("Kram!", "Myys", "Puss!", "Älskar dig!")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("Shadow")]
 script = ExtResource("19_ju3pi")
