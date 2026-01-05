@@ -57,6 +57,11 @@ public partial class BehaviorHug : Behavior
 	public void HugRequested(Interprocedural.Message InMsg)
 	{
 		GD.Print("Hug requested from: " + InMsg.sender);
+		if (Target != "")
+		{
+			GD.Print("Ignoring request, aready hugging someone");
+			return;
+		}
 
 		var otherPos = new Vector2(
 			float.Parse(InMsg.data["pX"].AsString()), 

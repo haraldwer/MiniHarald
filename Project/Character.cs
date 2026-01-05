@@ -31,17 +31,22 @@ public partial class Character : Node2D
 
 		Instance = this;
 		Human = !CharacterSelector.GetCharacter().Contains("Cat");
-		Rnd.Seed = (ulong)((int)DateTime.Now.Ticks & 0x0000FFFF); // reduce to int range
+		Rnd.Seed = (ulong)(DateTime.Now.Ticks); // reduce to int range
 
+		GD.Print("Ready!");
 		foreach (var col in Colorized)
 		{
+			GD.Print("Original color: " + col.SelfModulate);
 			var c = col.SelfModulate;
-			col.SetSelfModulate(Color.FromHsv(Rnd.Randf(), c.S, c.V));
+			col.SelfModulate = Color.FromHsv(Rnd.Randf(), c.S, c.V);
+			GD.Print("Randomized color: " + col.SelfModulate);
 		}
 		
 		GetWindow().FilesDropped += OnFilesDropped;
 		Movement.SetPos(WorldToChar(ScreenToWorld(MousePos())));
-		
+
+		GetWindow().Title = "Mini" + (Human ? CharacterSelector.GetCharacter() : "Katt");
+
 		Interprocedural.Get().Init();
 	}
 

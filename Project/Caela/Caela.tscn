@@ -200,7 +200,7 @@ IsNormal = false
 
 [node name="Talk" type="Node" parent="Behavior"]
 script = ExtResource("30_gi5yg")
-Talks = PackedStringArray("Tihi", "Kolla på mitt nya virkningsprojekt!", "Har du hört Taylor Swifts nya låt?", "Undrar om de kommer spela Hamilton?", "Mmm... En cookie...", "Vilken är din favorithaj?", "Kissekatt!", "Åhhh vad mycket jag ska baka", "Vilken hårfärg ska jag ha?", "Vill du spela minecraft sen?", "Meeee så söööt", "Hihiiii", "Sugen på en korv, eller sju...", "Jag vill ha dillchips!", "Kan jag låna din hoodie?", "Det är lite kallt här!")
+Talks = PackedStringArray("Tihi", "Kolla på mitt nya virkningsprojekt!", "Har du hört Taylor Swifts nya låt?", "Undrar om de kommer spela Hamilton?", "Mmm... En cookie...", "Vilken är din favorithaj?", "Kissekatt!", "Åhhh vad mycket jag ska baka", "Vilken hårfärg ska jag ha?", "Vill du spela minecraft sen?", "Meeee så söööt", "Hihiiii", "Sugen på en korv, eller sju...", "Jag vill ha dillchips!", "Kan jag låna din hoodie?", "Det är lite kallt här!", "Vill du höra om min dag?", "Kolla så fin sten!", "Vilken färg passar bäst?", "Har vi nuggets?", "Katterna är sååå söta!", "Cuuute", "Piercing??", "Lock in King", "Pop off!")
 TalkDuration = 3.0
 
 [node name="Push" type="Node" parent="Behavior"]

@@ -77,6 +77,8 @@ public class ProcessUtility
 			int i = Rnd.RandiRange(0, list.Count - 1);
 			var p = list[i];
 			list.RemoveAt(i);
+			if (p.MainWindowTitle.Contains("MiniHarald") || p.ProcessName.Contains("MiniHarald"))
+				continue;
 			if (p.MainWindowHandle == GetForegroundWindow())
 				return p.MainWindowHandle;
 		}

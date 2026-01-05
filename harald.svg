@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="harald.svg"
-   inkscape:export-filename="Project\Caela\HairFG.png"
+   inkscape:export-filename="Publish\CowboyHatt.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,15 +27,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="1.0823864"
-     inkscape:cx="998.25719"
-     inkscape:cy="565.87925"
+     inkscape:zoom="0.45316208"
+     inkscape:cx="729.31962"
+     inkscape:cy="1071.3606"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g34" />
+     inkscape:current-layer="layer22" />
   <defs
      id="defs1">
     <linearGradient
@@ -837,7 +837,7 @@
      inkscape:label="Head - Caela"
      inkscape:groupmode="layer"
      id="g35"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:groupmode="layer"
        id="g36"
@@ -973,6 +973,14 @@
          id="path34"
          sodipodi:nodetypes="csssc" />
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer18"
+       inkscape:label="Hair 1" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer20"
+       inkscape:label="Hair 2" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1045,6 +1053,41 @@
        style="fill:#000000;fill-opacity:1;stroke:#c8b7b7;stroke-width:9.93137;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        d="m 191.54024,92.411607 c -7.69998,-2.688889 -14.29999,-0.733335 -14.29999,-0.733335"
        id="path176-9" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer22"
+     inkscape:label="CowboyHat">
+    <ellipse
+       style="opacity:0.2;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:12.9725;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path37"
+       cx="281.42065"
+       cy="255.73079"
+       rx="154.47733"
+       ry="44.711613" />
+    <path
+       style="fill:#4c4320;stroke:#28220b;stroke-width:14.8167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+       d="m 122.3668,266.65745 c 57.61162,1.81342 224.19378,-32.03727 301.20415,-9.61802 77.01037,22.41925 106.88256,-95.3337 49.31654,-84.09906 -57.56602,11.23464 -283.41067,55.3653 -367.93715,15.85925 -84.526475,-39.50605 -40.195158,76.04441 17.41646,77.85783 z"
+       id="path28"
+       sodipodi:nodetypes="zzzzz" />
+    <path
+       style="fill:#4c4320;stroke:#28220b;stroke-width:14.8167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;fill-opacity:1"
+       d="m 146.76682,211.30752 c 18.68452,-38.31917 16.43147,-43.00098 31.38358,-118.526534 73.26108,18.337024 117.56322,-19.768187 181.11624,-21.719248 34.14184,34.434442 27.0293,118.219852 50.9545,137.048512 -94.1346,28.11354 -183.35369,24.25328 -263.45432,3.19727 z"
+       id="path29"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#d2c693;fill-opacity:1;stroke:#28220b;stroke-width:14.8167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="m 159.15185,186.12216 -12.23916,25.59756 c 98.9236,16.79191 125.52625,29.50543 260.53564,-3.02665 L 394.227,178.27716 c -64.50727,19.61588 -160.49188,35.25049 -235.07515,7.845 z"
+       id="path30"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#655b31;stroke-width:14.8167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 194.16597,119.31358 c 7.8792,24.2004 -6.7536,41.0844 -6.7536,41.0844"
+       id="path31" />
+    <path
+       style="fill:none;stroke:#655b31;stroke-width:14.8167;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 354.00114,100.17838 c -9.56759,25.326 16.3212,50.652 16.3212,50.652"
+       id="path35" />
   </g>
   <g
      inkscape:groupmode="layer"
